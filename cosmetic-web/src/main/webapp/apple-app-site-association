@@ -1,0 +1,39 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "67HMGMEFBG.com.cyberlink.youcammakeup",
+        "paths":[ "/ap/ymk/*" ]
+      },
+      {
+        "appID": "67HMGMEFBG.com.cyberlink.youperfect",
+        "paths":[ "/ap/ypa/*" ]
+      },
+      {
+        "appID": "67HMGMEFBG.com.perfectcorp.beautycircle",
+        "paths":[ "/ap/ybc/*" ]
+      },
+      {
+        "appID": "67HMGMEFBG.perfectcorp.YouCamNail",
+        "paths":[ "/ap/ycn/*" ]
+      },
+	  {
+        "appID": "CKX297T75L.com.cyberlink.en.youcammakeup",
+        "paths":[ "/ap/ymk/*" ]
+      },
+      {
+        "appID": "CKX297T75L.com.cyberlink.en.youperfect",
+        "paths":[ "/ap/ypa/*" ]
+      },
+      {
+        "appID": "CKX297T75L.com.perfectcorp.en.beautycircle",
+        "paths":[ "/ap/ybc/*" ]
+      },
+      {
+        "appID": "CKX297T75L.perfectcorp.en.YouCamNail",
+        "paths":[ "/ap/ycn/*" ]
+      }
+    ]
+  }
+}

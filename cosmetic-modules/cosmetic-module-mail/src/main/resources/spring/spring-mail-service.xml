@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+    <bean id="mail.mailActivationService" class="com.cyberlink.cosmetic.modules.mail.service.impl.MailActivationServiceImpl"
+        parent="mail.abstractMailService">
+        <!-- property name="websiteDomain" value="${website.domain}" /-->
+        <property name="memberDao" ref="user.MemberDao" />
+    </bean>
+    <bean id="mail.abstractMailService" class="com.cyberlink.cosmetic.modules.mail.service.impl.AbstractMailService"
+        abstract="true">
+        <property name="configuration" ref="core.freemarkerConfiguration" />
+        <property name="mailService" ref="core.mailService.bcMail" />
+        <property name="accountDao" ref="user.AccountDao" />
+        <property name="blockMailDomainDao" ref="user.BlockMailDomainDao" />
+        <!--  property name="messageSource" ref="messageSource" /-->
+    </bean>    
+    
+    <bean id="mail.mailInappropProdCommentService" class="com.cyberlink.cosmetic.modules.mail.service.impl.MailInappropProdCommentServiceImpl"
+        parent="mail.abstractMailService">
+        <property name="commentDao" ref="product.ProductCommentDao" />
+        <!-- property name="websiteDomain" value="${website.domain}" /-->
+        <!-- <property name="memberDao" ref="user.MemberDao" /> -->
+    </bean>
+    
+    <bean id="mail.mailInappropPostCommentService" class="com.cyberlink.cosmetic.modules.mail.service.impl.MailInappropPostCommentServiceImpl"
+        parent="mail.abstractMailService">
+        <property name="commentDao" ref="post.CommentDao" />
+        <property name="postDao" ref="post.PostDao" />
+    </bean>
+
+    <bean id="mail.MailSyncReportService" class="com.cyberlink.cosmetic.modules.mail.service.impl.MailSyncReportServiceImpl"
+        parent="mail.abstractMailService">
+    </bean>
+    
+    <bean id="mail.mailJoinEventHomeService" class="com.cyberlink.cosmetic.modules.mail.service.impl.MailJoinEventHomeServiceImpl"
+        parent="mail.abstractMailService">
+        <!-- property name="websiteDomain" value="${website.domain}" /-->
+        <property name="eventUserDao" ref="event.EventUserDao" />
+        <property name="brandEventDao" ref="event.BrandEventDao" />
+    </bean>
+    
+    <bean id="mail.mailJoinEventStoreService" class="com.cyberlink.cosmetic.modules.mail.service.impl.MailJoinEventStoreServiceImpl"
+        parent="mail.abstractMailService">
+        <!-- property name="websiteDomain" value="${website.domain}" /-->
+        <property name="eventUserDao" ref="event.EventUserDao" />
+        <property name="brandEventDao" ref="event.BrandEventDao" />
+    </bean>
+    
+    <bean id="mail.mailJoinEventCouponService" class="com.cyberlink.cosmetic.modules.mail.service.impl.MailJoinEventCouponServiceImpl"
+        parent="mail.abstractMailService">
+        <!-- property name="websiteDomain" value="${website.domain}" /-->
+        <property name="eventUserDao" ref="event.EventUserDao" />
+        <property name="brandEventDao" ref="event.BrandEventDao" />
+    </bean>
+    
+    <bean id="mail.mailJoinEventConsultationService" class="com.cyberlink.cosmetic.modules.mail.service.impl.MailJoinEventConsultationServiceImpl"
+        parent="mail.abstractMailService">
+        <!-- property name="websiteDomain" value="${website.domain}" /-->
+        <property name="eventUserDao" ref="event.EventUserDao" />
+        <property name="brandEventDao" ref="event.BrandEventDao" />
+    </bean>
+    
+    <bean id="mail.mailFreeSampleCustomerService" class="com.cyberlink.cosmetic.modules.mail.service.impl.MailFreeSampleCustomerServiceImpl"
+        parent="mail.abstractMailService">
+        <!-- property name="websiteDomain" value="${website.domain}" /-->
+        <property name="brandEventDao" ref="event.BrandEventDao" />
+    </bean>
+    
+    <bean id="mail.mailSuspensionService" class="com.cyberlink.cosmetic.modules.mail.service.impl.MailSuspensionServiceImpl"
+        parent="mail.abstractMailService">
+        <!-- property name="websiteDomain" value="${website.domain}" /-->
+    </bean>
+    
+    <bean id="mail.mailImpersonationSuspensionService" class="com.cyberlink.cosmetic.modules.mail.service.impl.MailImpersonationSuspensionServiceImpl"
+        parent="mail.abstractMailService">
+        <!-- property name="websiteDomain" value="${website.domain}" /-->
+    </bean>
+    
+    <bean id="mail.mailImpersonationInvestigationService" class="com.cyberlink.cosmetic.modules.mail.service.impl.MailImpersonationInvestigationServiceImpl"
+        parent="mail.abstractMailService">
+        <!-- property name="websiteDomain" value="${website.domain}" /-->
+    </bean>
+    
+    <bean id="mail.mailSignUpService" class="com.cyberlink.cosmetic.modules.mail.service.impl.MailSignUpServiceImpl"
+        parent="mail.abstractMailService">
+        <property name="memberDao" ref="user.MemberDao" />
+    </bean>
+    
+    <bean id="mail.mailSignUpBCWService" class="com.cyberlink.cosmetic.modules.mail.service.impl.MailSignUpBCWServiceImpl"
+        parent="mail.abstractMailService">
+        <property name="memberDao" ref="user.MemberDao" />
+    </bean>
+    
+    <bean id="mail.mailActivationBCWService" class="com.cyberlink.cosmetic.modules.mail.service.impl.MailActivationBCWServiceImpl"
+        parent="mail.abstractMailService">
+        <property name="memberDao" ref="user.MemberDao" />
+    </bean>
+    
+    <bean id="mail.mailResetPasswordService" class="com.cyberlink.cosmetic.modules.mail.service.impl.MailResetPasswordServiceImpl"
+        parent="mail.abstractMailService">
+        <property name="memberDao" ref="user.MemberDao" />
+    </bean>
+    
+    <bean id="mail.mailResetPasswordBCWService" class="com.cyberlink.cosmetic.modules.mail.service.impl.MailResetPasswordBCWServiceImpl"
+        parent="mail.abstractMailService">
+        <property name="memberDao" ref="user.MemberDao" />
+    </bean>
+
+</beans>

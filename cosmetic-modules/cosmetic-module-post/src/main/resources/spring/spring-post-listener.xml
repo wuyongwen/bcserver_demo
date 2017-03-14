@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <bean class="com.cyberlink.cosmetic.modules.post.listener.PostViewProcessEventListener">
+    	<property name="postViewRepository" ref="post.postViewRepository" />
+        <property name="order" value="10" />
+    </bean>
+
+	<bean class="com.cyberlink.cosmetic.modules.post.listener.PostLikeEventListener">
+    	<property name="likeService" ref="post.LikeService" />
+        <property name="order" value="10" />
+    </bean>
+    
+    <bean class="com.cyberlink.cosmetic.modules.post.listener.PostUnlikeEventListener">
+    	<property name="likeService" ref="post.LikeService" />
+        <property name="order" value="10" />
+    </bean>
+    
+	<bean class="com.cyberlink.cosmetic.modules.post.listener.CircleDeleteEventListener">
+    	<property name="likeService" ref="post.LikeService" />
+        <property name="order" value="10" />
+    </bean>
+    
+    <bean class="com.cyberlink.cosmetic.modules.post.listener.PostDeleteEventListener">
+    	<property name="likeService" ref="post.LikeService" />
+        <property name="order" value="10" />
+    </bean>
+    
+    <bean class="com.cyberlink.cosmetic.modules.post.listener.UserDeleteEventListener">
+    	<property name="likeRepository" ref="post.likeRepository" />
+        <property name="order" value="10" />
+    </bean>
+    
+    <bean class="com.cyberlink.cosmetic.modules.post.listener.DiscoverPostCreateEventListener">
+    	<property name="likeRepository" ref="post.likeRepository" />
+    	<property name="psTrendService" ref="post.psTrendService" />
+        <property name="order" value="30" />
+    </bean>
+    
+    <bean class="com.cyberlink.cosmetic.modules.post.listener.PostCreateEventListener">
+    	<property name="photoProcessService" ref="file.photoProcessService" />
+    	<property name="postDao" ref="post.PostDao" />
+    	<property name="postScoreDao" ref="post.PostScoreDao" />
+    	<property name="circleTypeDao" ref="circle.circleTypeDao" />
+    	<property name="transactionTemplate" ref="core.jdbcTemplate" />
+    	<property name="objectMapper" ref="web.objectMapper" />
+    	<property name="imageService" ref="file.imageService" />
+    	<property name="fileService" ref="file.fileService" />
+    	<property name="relatedPostService" ref="post.relatedPostService" />
+    	<property name="postTopKeywordDao" ref="post.PostTopKeywordDao" />
+        <property name="order" value="20" />
+    </bean>
+    
+    <bean class="com.cyberlink.cosmetic.modules.post.listener.PostCategoryUpdateEventListener">
+    	<property name="trendingRepository" ref="post.trendingRepository" />
+        <property name="order" value="10" />
+    </bean>
+    
+    <bean class="com.cyberlink.cosmetic.modules.post.listener.TrendUserGroupUpdateEventListener">
+    	<property name="trendingRepository" ref="post.trendingRepository" />
+        <property name="order" value="10" />
+    </bean>
+
+    <bean class="com.cyberlink.cosmetic.modules.post.listener.UserBadgeEventListener">
+    	<property name="postHeatRepository" ref="post.postHeatRepository" />
+    	<property name="psTrendHeatRepository" ref="post.psTrendHeatRepository" />
+    	<property name="userAttrDao" ref="user.userAttrDao" />
+        <property name="order" value="10" />
+    </bean>
+    
+	<bean class="com.cyberlink.cosmetic.modules.post.listener.PersonalTrendEventListener">
+		<property name="trendingRepository" ref="post.trendingRepository" />
+		<property name="trendingService" ref="post.trendingService" />
+        <property name="order" value="30" />
+    </bean>
+</beans>

@@ -1,0 +1,20 @@
+package com.cyberlink.cosmetic.action.backend;
+
+public enum AccessMap {
+	USER_MANAGER_ACCESS(0x0000000000000001L),
+	POST_MANAGER_ACCESS(0x0000000000000002L),
+	CIRCLE_MANAGER_ACCESS(0x0000000000000004L),
+	PRODUCT_MANAGER_ACCESS(0x0000000000000008L),
+	REPORT_MANAGER_ACCESS(0x0000000000000010L),
+	REPORT_AUDITOR_ACCESS(0x0000000000000020L),
+	EVENT_MANAGER_ACCESS(0x0000000000000040L),
+	APK_MANAGER_ACCESS(0x0000000000000080L);
+
+	private final long code;
+	private AccessMap(long code) {
+		this.code = code;
+	}	
+    public long value() {
+        return code;
+    }	
+}

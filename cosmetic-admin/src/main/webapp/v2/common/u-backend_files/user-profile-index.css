@@ -1,0 +1,76 @@
+#userProfileApp {
+	
+}
+
+#userProfileApp .profile-table {
+	margin-top: 40px;
+}
+
+#userProfileApp .row.profile-item-row {
+	border-bottom: solid 1px #EEEEEE;
+	margin: 0px 5px;
+}
+
+#userProfileApp .profile-item-col {
+	padding: 10px;
+	min-height: 50px;
+	line-height: 50px;
+}
+
+#userProfileApp .profile-name {
+	text-align: right;
+	font-weight: bolder;
+}
+
+#userProfileApp .profile-value {
+	color: #888888;
+}
+
+#userProfileApp .profile-action {
+	
+}
+
+#userProfileApp .avatar-thumbnail {
+	width: 120px;
+	height: 120px;
+	line-height: 120px;
+}
+
+#userProfileApp .avatar-thumbnail img {
+	max-width: 120px;
+	max-height: 120px;
+}
+
+.upload-avatar-control {
+	margin-bottom: 5px;
+}
+
+.upload-avatar-status {
+	height: 25px;
+}
+
+.upload-avatar-status .status-message {
+	text-align: right;
+	font-weight: bolder;
+	font-style: italic;
+	color: #777777;
+}
+
+.upload-avatar-status .progress { 
+	height: 2px;
+	margin: 0px;
+}
+
+.modal-footer.upload-avatar-modal-footer {
+	border-width: 0px;
+}
+
+.modal-footer.upload-avatar-modal-footer {
+	border-width: 0px;
+}
+
+.form-control.change-password-input {
+	width: 225px;
+}
+
+

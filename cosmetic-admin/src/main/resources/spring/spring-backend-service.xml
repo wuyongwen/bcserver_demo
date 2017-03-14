@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+    
+    <bean id="backend.BackendPostService" class="com.cyberlink.cosmetic.action.backend.service.impl.BackendPostServiceImpl">
+        <property name="postService" ref="post.PostService" />       
+        <property name="transactionTemplate" ref="core.jdbcTemplate" />        
+    </bean>
+	<bean id="backend.PhotoScoreService" class="com.cyberlink.cosmetic.action.backend.service.impl.PhotoScoreServiceImpl">
+        <property name="postDao" ref="post.PostDao" />
+        <property name="postViewDao" ref="post.PostViewDao" />
+        <property name="postRescueDao" ref="post.PostRescueDao" />
+        <property name="postScoreDao" ref="post.PostScoreDao" />
+        <property name="circleDao" ref="circle.circleDao" />
+        <property name="circleTypeDao" ref="circle.circleTypeDao" />
+        <property name="localeDao" ref="common.localeDao" />
+        <property name="photoProcessService" ref="file.photoProcessService" />    
+        <property name="mailInappropPostCommentService" ref="mail.mailInappropPostCommentService" />    
+        <property name="postPopularityService" ref="post.PostPopularityService" />
+        <property name="objectMapper" ref="web.objectMapper" />                  
+        <property name="transactionTemplate" ref="core.jdbcTemplate" />                
+    </bean>
+    <bean id="backend.AutoFanPagePostService" class="com.cyberlink.cosmetic.action.backend.service.impl.AutoFanPagePostServiceImpl">
+    	<property name="fanPageUserDao" ref="user.FanPageUserDao" />
+    	<property name="postService" ref="post.PostService" />
+    	<property name="fileService" ref="file.fileService" />
+    	<property name="notifyService" ref="notify.NotifyService" />
+    	<property name="appToken" value="665599606836175|UIrmha37HmbWXvr62DLulnMjYfI" />   
+    </bean>
+    <bean id="backend.FreeSampleMailService" class="com.cyberlink.cosmetic.action.backend.service.impl.FreeSampleMailServiceImpl">
+        <property name="brandEventDao" ref="event.BrandEventDao" />
+        <property name="eventUserDao" ref="event.EventUserDao" />
+        <property name="mailFreeSampleCustomerService" ref="mail.mailFreeSampleCustomerService" />          
+    </bean>
+    <bean id="backend.PostTotalCountService" class="com.cyberlink.cosmetic.action.backend.service.impl.PostTotalCountServiceImpl">
+        <property name="userDao" ref="user.UserDao" />
+        <property name="postDao" ref="post.PostDao" />
+        <property name="postAttributeDao" ref="post.PostAttributeDao" />
+        <property name="transactionTemplate" ref="core.jdbcTemplate" />
+    </bean>
+	<bean id="backend.AutoCheckAndImportNewProductsService"
+		class="com.cyberlink.cosmetic.action.backend.service.impl.AutoCheckAndImportNewProductsServiceImpl">
+		<property name="productDao" ref="product.ProductDao" />
+		<property name="storePriceRangeDao" ref="product.StorePriceRangeDao" />
+		<property name="storeDao" ref="product.StoreDao" />
+		<property name="productService" ref="product.productService" />
+		<property name="relProductTypeService" ref="product.RelProductTypeService" />
+		<property name="transactionTemplate" ref="core.jdbcTemplate" />
+		<property name="backendProductDao" ref="product.BackendProductDao" />
+		<property name="brandDao" ref="product.BrandDao" />
+		<property name="brandIndexDao" ref="product.BrandIndexDao" />
+		<property name="objectMapper" ref="web.objectMapper" />
+		<property name="brandService" ref="product.BrandService" />
+		<property name="brandIndexService" ref="product.BrandIndexService" />
+		<property name="productTypeDao" ref="product.ProductTypeDao" />
+		<property name="productTypeService" ref="product.ProductTypeService" />
+	</bean>
+	<bean id="backend.CommentsMailService" class="com.cyberlink.cosmetic.action.backend.service.impl.CommentsMailServiceImpl">
+		<property name="commentDao" ref="post.CommentDao" />
+		<property name="productCommentDao" ref="product.ProductCommentDao" />
+		<property name="mailInappropPostCommentService" ref="mail.mailInappropPostCommentService" />
+	</bean>
+	<bean id="backend.BounceAndComplainEmailService" class="com.cyberlink.cosmetic.action.backend.service.impl.BounceAndComplainEmailServiceImpl">
+		<property name="accountDao" ref="user.AccountDao" />
+	</bean>
+	<bean id="backend.PostTopKeywordService" class="com.cyberlink.cosmetic.action.backend.service.impl.PostTopKeywordServiceImpl">
+		<property name="relatedPostService" ref="post.relatedPostService" />
+        <property name="mailInappropPostCommentService" ref="mail.mailInappropPostCommentService" />    
+        <property name="objectMapper" ref="web.objectMapper" />
+    </bean>
+    <bean id="backend.psTrendScheduleServiceImpl" class="com.cyberlink.cosmetic.action.backend.service.impl.PsTrendScheduleServiceImpl">
+    	<property name="psTrendService" ref="post.psTrendService" />
+		<property name="mailInappropPostCommentService" ref="mail.mailInappropPostCommentService" />    
+    	<property name="objectMapper" ref="web.objectMapper" />
+    	<property name="transactionTemplate" ref="core.jdbcTemplate" />                
+    </bean>
+</beans>

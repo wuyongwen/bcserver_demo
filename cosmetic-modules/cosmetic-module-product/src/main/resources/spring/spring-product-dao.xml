@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+    <bean id="product.ProductDao" class="com.cyberlink.cosmetic.modules.product.dao.hibernate.ProductDaoHibernate"
+        parent="core.abstractDao" />
+
+    <bean id="product.ProductCollectionDao" class="com.cyberlink.cosmetic.modules.product.dao.hibernate.ProductCollectionDaoHibernate"
+        parent="core.abstractDao" />
+
+    <bean id="product.BrandDao" class="com.cyberlink.cosmetic.modules.product.dao.hibernate.BrandDaoHibernate"
+        parent="core.abstractDao" />
+
+    <bean id="product.StoreDao" class="com.cyberlink.cosmetic.modules.product.dao.hibernate.StoreDaoHibernate"
+        parent="core.abstractDao" />
+
+    <bean id="product.ProductTypeDao" class="com.cyberlink.cosmetic.modules.product.dao.hibernate.ProductTypeDaoHibernate"
+        parent="core.abstractDao" />
+    
+    <bean id="product.RelProductTypeDao" class="com.cyberlink.cosmetic.modules.product.dao.hibernate.RelProductTypeDaoHibernate"
+        parent="core.abstractDao" />
+        
+	<bean id="product.ProductProductEffectDao" class="com.cyberlink.cosmetic.modules.product.dao.hibernate.ProductProductEffectDaoHibernate"
+        parent="core.abstractDao" />
+        
+	<bean id="product.ProductEffectDao" class="com.cyberlink.cosmetic.modules.product.dao.hibernate.ProductEffectDaoHibernate"
+        parent="core.abstractDao" />
+
+    <bean id="product.TypeGroupDao" class="com.cyberlink.cosmetic.modules.product.dao.hibernate.TypeGroupDaoHibernate"
+        parent="core.abstractDao" />
+        
+    <bean id="product.SearchLogDao" class="com.cyberlink.cosmetic.modules.product.dao.hibernate.SearchLogDaoHibernate"
+        parent="core.abstractDao" />
+    
+    <bean id="product.ProductCommentDao" class="com.cyberlink.cosmetic.modules.product.dao.hibernate.ProductCommentDaoHibernate"
+        parent="core.abstractDao" />
+        
+    <bean id="product.BrandIndexDao" class="com.cyberlink.cosmetic.modules.product.dao.hibernate.BrandIndexDaoHibernate"
+        parent="core.abstractDao" />
+        
+    <bean id="product.StorePriceRangeDao" class="com.cyberlink.cosmetic.modules.product.dao.hibernate.StorePriceRangeDaoHibernate"
+        parent="core.abstractDao" />
+    
+	<bean id="product.BackendProductDao" class="com.cyberlink.cosmetic.modules.product.dao.hibernate.BackendProductDaoHibernate"
+        parent="core.abstractDao" />
+    
+    <bean id="product.ProductChangeLogDao" class="com.cyberlink.cosmetic.modules.product.dao.hibernate.ProductChangeLogDaoHibernate"
+        parent="core.abstractDao" />
+    
+    <bean id="product.ProductChangeLogAttrDao" class="com.cyberlink.cosmetic.modules.product.dao.hibernate.ProductChangeLogAttrDaoHibernate"
+        parent="core.abstractDao" />
+        
+    <bean id="product.RedirectLogDao" class="com.cyberlink.cosmetic.modules.product.dao.hibernate.RedirectLogDaoHibernate"
+        parent="core.abstractDao" />
+        
+	<bean id="product.ReportedProdCommentDao" class="com.cyberlink.cosmetic.modules.product.dao.hibernate.ReportedProdCommentDaoHibernate"
+        parent="core.abstractDao" />
+        
+    <bean id="product.ProductSearchKeywordDao" class="com.cyberlink.cosmetic.modules.product.dao.hibernate.ProductSearchKeywordDaoHibernate"
+        parent="core.abstractDao" />
+        
+    <bean id="product.BrandNameAliasDao" class="com.cyberlink.cosmetic.modules.product.dao.hibernate.BrandNameAliasDaoHibernate"
+        parent="core.abstractDao" />
+
+    <bean id="product.DeeplinkLogDao" class="com.cyberlink.cosmetic.modules.product.dao.hibernate.DeeplinkLogDaoHibernate"
+        parent="core.abstractDao" />
+        
+    <bean id="product.ProductFeatureDao" class="com.cyberlink.cosmetic.modules.product.dao.hibernate.ProductFeatureDaoHibernate"
+        parent="core.abstractDao" />
+</beans>

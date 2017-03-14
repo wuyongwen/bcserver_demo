@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <bean id="post.PostDao" class="com.cyberlink.cosmetic.modules.post.dao.hibernate.PostDaoHibernate"
+        parent="core.abstractDao" />
+    <bean id="post.PostProductDao" class="com.cyberlink.cosmetic.modules.post.dao.hibernate.PostProductDaoHibernate"
+        parent="core.abstractDao" />
+    <bean id="post.AttachmentDao" class="com.cyberlink.cosmetic.modules.post.dao.hibernate.AttachmentDaoHibernate"
+        parent="core.abstractDao" />
+    <bean id="post.AttachmentExtLinkDao" class="com.cyberlink.cosmetic.modules.post.dao.hibernate.AttachmentExtLinkDaoHibernate"
+        parent="core.abstractDao" />
+	<bean id="post.CommentDao" class="com.cyberlink.cosmetic.modules.post.dao.hibernate.CommentDaoHibernate"
+        parent="core.abstractDao" />
+	<bean id="post.LikeDao" class="com.cyberlink.cosmetic.modules.post.dao.hibernate.LikeDaoHibernate"
+        parent="core.abstractDao" />
+    <bean id="post.CommentTagDao" class="com.cyberlink.cosmetic.modules.post.dao.hibernate.CommentTagDaoHibernate"
+        parent="core.abstractDao" />
+    <bean id="post.PostReportedDao" class="com.cyberlink.cosmetic.modules.post.dao.hibernate.PostReportedDaoHibernate"
+    	parent="core.abstractDao" />
+	<bean id="post.PostNewDao" class="com.cyberlink.cosmetic.modules.post.dao.hibernate.PostNewDaoHibernate"
+        parent="core.abstractDao" />
+    <bean id="post.PostNewPoolDao" class="com.cyberlink.cosmetic.modules.post.dao.hibernate.PostNewPoolDaoHibernate"
+        parent="core.abstractDao" />
+    <bean id="post.PostAttributeDao" class="com.cyberlink.cosmetic.modules.post.dao.hibernate.PostAttributeDaoHibernate"
+        parent="core.abstractDao" />
+	<bean id="post.PostCircleInDao" class="com.cyberlink.cosmetic.modules.post.dao.hibernate.PostCircleInDaoHibernate"
+        parent="core.abstractDao" />
+	<bean id="post.PostRescueDao" class="com.cyberlink.cosmetic.modules.post.dao.hibernate.PostRescueDaoHibernate"
+        parent="core.abstractDao" />
+    <bean id="post.PostScoreDao" class="com.cyberlink.cosmetic.modules.post.dao.hibernate.PostScoreDaoHibernate"
+        parent="core.abstractDao" />
+    <bean id="post.PostScoreTrendDao" class="com.cyberlink.cosmetic.modules.post.dao.hibernate.PostScoreTrendDaoHibernate"
+        parent="core.abstractDao" />
+    <bean id="post.PostAutoArticleDao" class="com.cyberlink.cosmetic.modules.post.dao.hibernate.PostAutoArticleDaoHibernate"
+        parent="core.abstractDao" />
+    <bean id="post.PostViewDao" class="com.cyberlink.cosmetic.modules.post.dao.hibernate.PostViewDaoHibernate"
+        parent="core.abstractDao" />
+    <bean id="post.PostDefaultTagDao" class="com.cyberlink.cosmetic.modules.post.dao.hibernate.PostDefaultTagDaoHibernate"
+        parent="core.abstractDao" />
+    <bean id="post.PostCurateKeywordDao" class="com.cyberlink.cosmetic.modules.post.dao.hibernate.PostCurateKeywordDaoHibernate"
+        parent="core.abstractDao" />
+	<bean id="post.HoroscopeDao" class="com.cyberlink.cosmetic.modules.post.dao.hibernate.HoroscopeDaoHibernate"
+        parent="core.abstractDao" />
+    <bean id="post.PostTopKeywordDao" class="com.cyberlink.cosmetic.modules.post.dao.hibernate.PostTopKeywordDaoHibernate"
+        parent="core.abstractDao" />
+	<bean id="post.psTrendDao" class="com.cyberlink.cosmetic.modules.post.dao.hibernate.PsTrendDaoHibernate"
+	    parent="core.abstractDao" />
+	<bean id="post.psTrendGroupDao" class="com.cyberlink.cosmetic.modules.post.dao.hibernate.PsTrendGroupDaoHibernate"
+	    parent="core.abstractDao" />
+	<bean id="post.psTrendPoolDao" class="com.cyberlink.cosmetic.modules.post.dao.hibernate.PsTrendPoolDaoHibernate"
+	    parent="core.abstractDao" />
+	<bean id="post.psTrendUserDao" class="com.cyberlink.cosmetic.modules.post.dao.hibernate.PsTrendUserDaoHibernate"
+	    parent="core.abstractDao" />
+</beans>

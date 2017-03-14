@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<decorators defaultdir="/common/decorators">
+    <!-- Any urls that are excluded will never be decorated by Sitemesh -->
+    <excludes>
+        <pattern>/common/*</pattern>
+        <pattern>/post/CreatePost.action?listAttachablePost*</pattern>
+        <pattern>/post/queryPost.action?delete*</pattern>
+        <pattern>/post/queryPost.action?listComment*</pattern>
+        <pattern>/post/listUserPost.action?delete*</pattern>
+        <pattern>/post/msr.action*</pattern>
+        <pattern>/post/DisputePostSystem.action?*getDispute*</pattern>
+        <pattern>/post/externalPost.action?*list*</pattern>
+        <pattern>/user/selectUser.action*</pattern>
+        <pattern>/api/*</pattern>
+        <pattern>/tiu/*</pattern>
+        <pattern>/v2/user/login.action*</pattern>
+    </excludes>
+
+    <decorator name="backend-v2" page="backend-v2.jsp">
+        <pattern>/v2/*.action</pattern>
+    </decorator>
+
+    <decorator name="backend-v2-no-header" page="backend-v2-no-header.jsp" />
+
+    <decorator name="backend" page="backend.jsp">
+        <pattern>/*.action</pattern>
+    </decorator>
+
+</decorators>

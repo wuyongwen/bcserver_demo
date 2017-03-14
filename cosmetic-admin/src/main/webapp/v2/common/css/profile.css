@@ -1,0 +1,141 @@
+@charset "utf-8";
+/* CSS Document */
+.profile_col{}
+.red{
+	color:#cc3366;
+	font-weight: bold;
+}
+.profile_L_col{
+	float:left;
+	width: 160px;
+	font-size:15px;
+	line-height:30px;
+	color:#000000;
+	padding-left: 10px;
+}
+.profile_L_col2{
+	width:42%;
+	float:left;
+}
+.profile_L_col2_title{
+	font-size:15px;
+	padding-left: 10px;
+	color: #000000;
+}
+.profile_L_col2_des{
+	font-size:12px;
+	color:#666666;
+	font-weight:normal;
+	padding-left: 10px;
+}
+.profile_R_col2{
+	width:50%;
+	float:left;
+}
+.profile_R_col_changepwd{
+	width:200px;
+	float:left;
+}
+.profile_R_col{
+	float:left;
+	width: 500px;
+	line-height: 30px;
+}
+.ID{
+	line-height:30px;
+	color:#000000;
+	font-size: 15px;
+	font-weight: bold;
+}
+.QR img{
+	width:120px;
+	height:120px;
+	border:1px solid #cccccc;
+}
+.profile_space{
+	height:10px;
+	width:100%;
+
+}
+.profile_info{
+	font-size:12px;
+	color:#666666;
+	font-weight:normal;
+}
+.icon,.icon2{
+	width:191px;
+	height:191px;
+	margin-left: 10px;
+	margin-top: 10px;
+	position: relative;
+	border:1px solid #999999;
+	background:url(../images/profile_photo_default1.gif) no-repeat center white;
+}
+.icon img,.icon2 img{
+	width:100%;	
+}
+.icon input,.icon2 input{
+	filter: alpha(opacity=0);
+   	opacity: 0;
+   	position: absolute;
+   	top: 0px;
+   	width:100%;
+	height:100%;
+	cursor: pointer;
+}
+.icon:hover,.icon2:hover{ 
+	background:url(../images/profile_photo_default2.gif) no-repeat center white;
+	border: 1px solid #CC3366;
+}
+.icon_X{
+	position:absolute;
+	width: 15px;
+	height: 15px;
+	line-height:12px;
+	text-align:center;
+	background:rgba(0,0,0, 0.6);
+	right: 2px;
+	top: 2px;
+}
+.banner,.banner2{
+	height:191px;
+	width:auto;
+	margin: 10px 0 0 10px;
+	position: relative;
+	color:#999999; 
+	background:url(../images/profile_cover_default1.gif) no-repeat center white;
+	border:1px solid #999999;
+}
+.banner img,.banner2 img{
+	width:100%;
+}
+
+.banner input,.banner2 input{
+	filter: alpha(opacity=0);
+   	opacity: 0;
+   	position: absolute;
+   	top: 0px;
+   	width:100%;
+	height:100%;
+	cursor: pointer;
+}
+.banner:hover,.banner2:hover{ 
+	border:1px solid #cc3366; 
+	color:#cc3366; 
+	background:url(../images/profile_cover_default2.gif) no-repeat center white;
+}
+.banner_X{
+	position:absolute;
+	width: 15px;
+	height: 15px;
+	line-height:12px;
+	text-align:center;
+	background:rgba(0,0,0, 0.6);
+	margin-left: 332px;
+	margin-top:3px;
+ }
+.profile_sep{
+	width:100%;
+	height:1px;
+	background:#000000;
+}

@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <bean id="feed.abstractFeedEventListner" class="com.cyberlink.cosmetic.modules.feed.listener.AbstractFeedEventListener"
+        abstract="true">
+        <property name="followRepository" ref="user.followRepository" />
+        <property name="poolRepository" ref="feed.poolRepository" />
+        <!-- <property name="statsDUpdater" ref="core.defaultStatsDUpdater" /> -->
+        <property name="feedNotifyRepository" ref="feed.feedNotifyRepository" />
+    </bean>
+
+    <bean class="com.cyberlink.cosmetic.modules.feed.listener.PostCreateEventListener" parent="feed.abstractFeedEventListner">
+    	<property name="smartFeedContentGenerator" ref="feed.smartFeedContentGenerator" />
+        <property name="order" value="10" />
+    </bean>
+
+    <bean class="com.cyberlink.cosmetic.modules.feed.listener.PostDeleteEventListener">
+        <property name="followRepository" ref="user.followRepository" />
+        <property name="poolRepository" ref="feed.poolRepository" />
+        <property name="order" value="5" />
+    </bean>
+
+    <bean class="com.cyberlink.cosmetic.modules.feed.listener.UserUnfollowEventListener">
+        <property name="circleRepository" ref="circle.circleRepository" />
+        <property name="poolRepository" ref="feed.poolRepository" />
+        <property name="order" value="5" />
+    </bean>
+
+    <bean class="com.cyberlink.cosmetic.modules.feed.listener.UserBlockEventListener">
+        <property name="poolService" ref="feed.poolService" />
+        <property name="order" value="5" />
+    </bean>
+
+    <bean class="com.cyberlink.cosmetic.modules.feed.listener.UserDeleteEventListener">
+        <property name="poolService" ref="feed.poolService" />
+        <property name="order" value="5" />
+    </bean>
+
+    <bean class="com.cyberlink.cosmetic.modules.feed.listener.CircleUnfollowEventListener">
+        <property name="poolService" ref="feed.poolService" />
+        <property name="order" value="5" />
+    </bean>
+
+    <bean class="com.cyberlink.cosmetic.modules.feed.listener.CircleDeleteEventListener">
+        <property name="poolService" ref="feed.poolService" />
+        <property name="order" value="5" />
+    </bean>
+
+    <bean class="com.cyberlink.cosmetic.modules.feed.listener.CircleCloseEventListener">
+        <property name="poolService" ref="feed.poolService" />
+        <property name="order" value="5" />
+    </bean>
+
+    <bean class="com.cyberlink.cosmetic.modules.feed.listener.OfficialPostCreateEventListener">
+        <property name="poolRepository" ref="feed.poolRepository" />
+        <property name="feedRepository" ref="feed.feedRepository" />
+        <property name="order" value="5" />
+    </bean>
+
+    <bean class="com.cyberlink.cosmetic.modules.feed.listener.PostViewUpdateEventListener">
+        <property name="postViewRepository" ref="post.postViewRepository" />
+        <property name="order" value="5" />
+    </bean>
+
+    <bean class="com.cyberlink.cosmetic.modules.feed.listener.UserFollowEventListener">
+        <property name="poolRepository" ref="feed.poolRepository" />
+        <property name="order" value="10" />
+    </bean>
+
+    <bean class="com.cyberlink.cosmetic.modules.feed.listener.SmartFeedContentGenerateEventListener">
+        <property name="generator" ref="feed.smartFeedContentGenerator" />
+        <property name="order" value="10" />
+    </bean>
+
+    <bean class="com.cyberlink.cosmetic.modules.feed.listener.UserSignInEventListener">
+        <property name="generator" ref="feed.smartFeedContentGenerator" />
+        <property name="order" value="10" />
+        <property name="localeService" ref="user.localeService" />
+        <property name="feedRepository" ref="feed.feedRepository" />
+        <property name="numToRetrieve" value="50" />
+    </bean>
+    
+    <bean class="com.cyberlink.cosmetic.modules.feed.listener.PostFanOutEventListener" parent="feed.abstractFeedEventListner">
+        <property name="order" value="10" />
+    </bean>
+    
+</beans>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <bean id="core.sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+        <property name="packagesToScan">
+            <list>
+                <value>com.cyberlink.cosmetic.core.model</value>
+                <value>com.cyberlink.cosmetic.modules.*.model</value>
+            </list>
+        </property>
+        <property name="dataSource" ref="core.dataSource" />
+        <property name="hibernateProperties">
+            <value>
+                hibernate.dialect=org.hibernate.dialect.MySQL5InnoDBDialect
+                hibernate.fetch_size=15
+                hibernate.batch_size=20
+                hibernate.cache.use_query_cache=true
+                hibernate.cache.region.factory_class=org.hibernate.cache.ehcache.EhCacheRegionFactory
+                net.sf.ehcache.configurationResourceName=/ehcache-hibernate-admin.xml
+                hibernate.generate_statistics=${hibernate.generate_statistics}
+                hibernate.cache.use_structured_entries=${hibernate.cache.use_structured_entries}
+                hibernate.use_sql_comments=${hibernate.use_sql_comments}
+                hibernate.show_sql=${hibernate.show_sql}
+            </value>
+        </property>
+        <property name="entityInterceptor">
+            <bean id="entitySaveInterceptor" class="com.cyberlink.core.hibernate.listener.EntityInterceptor" />
+        </property>
+    </bean>
+
+    <bean class="com.cyberlink.core.hibernate.event.impl.EntityEventListenerRegistrationListener">
+        <property name="entityEventManager">
+            <bean class="com.cyberlink.core.hibernate.event.impl.DefaultEntityEventManager" />
+        </property>
+    </bean>
+
+    <bean class="com.cyberlink.core.hibernate.listener.HibernateListenerConfigurerListener">
+        <property name="sessionFactory" ref="core.sessionFactory" />
+        <property name="hibernateEventListener">
+            <bean class="com.cyberlink.core.hibernate.listener.HibernateEntityEventPublishListener" />
+        </property>
+    </bean>
+</beans>

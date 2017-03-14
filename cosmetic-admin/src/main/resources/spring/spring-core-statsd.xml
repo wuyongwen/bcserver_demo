@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- <bean id="core.defaultStatsDUpdater" class="com.cyberlink.cosmetic.statsd.DefaultStatsDUpdater">
+    	<constructor-arg value="${statsd.prefix}" />
+		<constructor-arg value="${statsd.host}" />
+		<constructor-arg value="${statsd.port}" />
+		<constructor-arg value="${statsd.sample.rate}" />
+    </bean>
+
+    <bean id="core.statsdInterceptor" class="com.cyberlink.cosmetic.statsd.StatsDInterceptor">
+        <property name="updater" ref="core.defaultStatsDUpdater" />
+    </bean> -->
+
+</beans>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.cyberlink.cosmetic</groupId>
+        <artifactId>cosmetic-project</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>cosmetic-modules</artifactId>
+    <packaging>pom</packaging>
+
+    <name>Cosmetic Modules</name>
+
+    <modules>
+		<module>cosmetic-module-common</module>
+		<module>cosmetic-module-user</module>
+		<module>cosmetic-module-product</module>
+		<module>cosmetic-module-post</module>
+		<module>cosmetic-module-circle</module>
+		<module>cosmetic-module-facebook</module>
+		<module>cosmetic-module-weibo</module>
+		<module>cosmetic-module-cyberlink</module>
+		<module>cosmetic-module-file</module>
+		<module>cosmetic-module-campaign</module>
+		<module>cosmetic-module-mail</module>
+		<module>cosmetic-module-gcm</module>
+		<module>cosmetic-module-apns</module>
+		<module>cosmetic-module-notify</module>
+		<module>cosmetic-module-search</module>
+		<module>cosmetic-module-event</module>
+		<module>cosmetic-module-look</module>
+        <module>cosmetic-module-feed</module>
+        <module>cosmetic-module-sms</module>
+  </modules>
+
+    <scm>
+        <developerConnection>scm:svn:http://clt-svn/svn-live/beautycircle/cosmetic/trunk/cosmetic-modules</developerConnection>
+        <url>http://clt-svn:8090/trac/beautycircle/browser/cosmetic/trunk/cosmetic-modules</url>
+    </scm>
+
+</project>

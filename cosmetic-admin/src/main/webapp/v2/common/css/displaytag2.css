@@ -1,0 +1,201 @@
+table.displaytag {
+	width:100%;
+	font-size:14px;
+}
+table.displaytag thead th {
+	white-space: nowrap;
+	font-weight: normal;
+}
+table.displaytag th,table.displaytag td {
+	padding: 0px 5px 0px 5px !important;
+	border-bottom:1px solid #e3e3e3;
+}
+
+table.displaytag thead tr {
+	background:#999999;
+	height:40px;
+	line-height:40px;
+	color:#FFFFFF;
+	border-bottom:1px solid #666666;
+}
+
+table.displaytag td {
+	min-height:45px;
+}
+
+table.displaytag th.sorted {
+	background-color: #1370CC;
+}
+
+table.displaytag th a,table.displaytag th a:visited {
+	color: black;
+}
+
+table.displaytag th a:hover {
+	text-decoration: underline;
+	color: black;
+}
+
+table.displaytag th.sorted a,table.displaytag th.sortable a {
+	background-position: right;
+	display: block;
+	width: 100%;
+	text-decoration: underline;
+}
+
+table.displaytag th.sortable a {
+	background-image: url(../images/displaytag/arrow_off.png);
+	margin-right: 10px;
+	background-repeat: no-repeat;
+}
+
+table.displaytag th.order1 a {
+	background-image: url(../images/displaytag/arrow_down.png);
+	background-repeat: no-repeat;
+}
+
+table.displaytag th.order2 a {
+	background-image: url(../images/displaytag/arrow_up.png);
+	background-repeat: no-repeat;
+}
+
+table.displaytag tr.odd {
+	background:#ffffff;
+}
+
+table.displaytag tr.tableRowEven,table.displaytag tr.even {
+	background:#fcfaff;
+}
+
+div.exportlinks {
+	background-color: #eee;
+	border: 1px dotted #999;
+	padding: 2px 4px 2px 4px;
+	margin: 2px 0 10px 0;
+	width: 79%;
+}
+
+span.export {
+	padding: 0 4px 1px 20px;
+	display: inline;
+	display: inline-block;
+	cursor: pointer;
+}
+
+span.excel {
+	background-image: url(../images/displaytag/ico_file_excel.png);
+	background-repeat: no-repeat;
+}
+
+span.csv {
+	background-image: url(../images/displaytag/ico_file_csv.png);
+	background-repeat: no-repeat;
+}
+
+span.xml {
+	background-image: url(../images/displaytag/ico_file_xml.png);
+	background-repeat: no-repeat;
+}
+
+span.pdf {
+	background-image: url(../images/displaytag/ico_file_pdf.png);
+	background-repeat: no-repeat;
+}
+
+span.rtf {
+	background-image: url(../images/displaytag/ico_file_rtf.png);
+	background-repeat: no-repeat;
+}
+
+span.pagebanner {
+	background-color: #eee;
+	border: 1px dotted #999;
+	padding: 2px 4px 2px 4px;
+	width: 79%;
+	margin-top: 10px;
+	display: none;
+	border-bottom: none;
+}
+
+span.pagelinks {
+	padding: 2px 4px 2px 4px;
+	margin-top: 20px;
+	text-align: center;
+	display: block;
+}
+
+
+.group-1 {
+    font-weight:bold;
+    padding-bottom:10px;
+    border-top:1px solid black;
+}
+.group-2 {
+    font-style:italic;
+    border-top: 1px solid black;
+
+}
+.subtotal-sum, .grandtotal-sum {
+    font-weight:bold;
+    text-align:right;
+}
+.subtotal-header {
+    padding-bottom: 0px;
+    border-top: 1px solid white;
+}
+.subtotal-label, .grandtotal-label {
+    border-top: 1px solid white;
+    font-weight: bold;
+}
+.grouped-table tr.even {
+    background-color: #fff;
+}
+.grouped-table tr.odd {
+    background-color: #fff;
+}
+.grandtotal-row {
+    border-top: 2px solid black;
+}
+
+.current_page{
+	display: inline-block;
+	margin-right:5px;
+}
+.current_page ._num{
+	text-align: center;
+	margin-right:5px;
+	width:40px;	
+}
+.current_page .totalPage {
+	display: inline-block;
+}
+._nav_forward{
+	display: inline-block;
+	width:40px;
+	height:20px;
+	background-color:#cc3366;
+	margin-right:5px;
+	background-image:url(../images/nav_b.png);
+	background-position:50%;
+	background-repeat:no-repeat;
+	position: relative;
+    top: 5px;
+}
+._nav_backward{
+	display: inline-block;
+	width:40px;
+	height:20px;
+	background-color:#cc3366;
+	background-image:url(../images/nav_f.png);
+	background-position:50%;
+	background-repeat:no-repeat;
+	position: relative;
+    top: 5px;
+}
+
+._nav_forward:hover{
+	opacity:0.8;
+}
+._nav_backward:hover{
+	opacity:0.8;
+}

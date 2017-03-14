@@ -1,0 +1,72 @@
+
+.serial_box{
+	margin: 10px  auto;
+	width: 85%;
+	height:auto;
+	text-align: center;
+	border: 1px solid #eb6d93;
+	border-radius: 5px;
+}
+.serial_title{
+	color: #fff;
+	font-size: 18px;
+	background: #eb6d93;
+	padding: 2%;
+	font-weight: 600;
+}
+.serial_down{
+	margin: 0 auto;
+    border-color: #eb6d93 #fff #fff;
+    border-style: solid;
+    border-width: 9px;
+    font-size:0;
+    height: 0px;
+    line-height: 0;
+    width: 0px;   
+}
+.serial_body{
+	padding-bottom: 4%;
+}
+.serial_name{
+	color: #eb6d93;
+	font-size: 14px;
+	padding-bottom: 2%;
+	margin-top:-4px;
+}
+.serial_number{
+	padding:4px  10px;
+	color: #000;
+	font-weight: bold;
+	font-size: 20px;
+	border: dashed 1px #000;
+	width: 90%;
+	margin: 0 auto;
+}
+.serial_due{
+	color: #000;
+	font-size: 14px;
+	padding: 7px 10px 9px 10px;
+}
+.serial_btn{
+	padding: 2% 15%;
+	border-radius: 5px;
+	background-color: #ef6597 ;
+	color: #fff;
+}
+.clear{
+	clear: both;
+}
+
+
+
+@media screen and (max-width:320px) {
+.serial_title,.serial_number{
+	font-size: 15px;
+}
+}
+
+@media screen and (min-width: 320px) and (max-width:1023px) {
+.serial_title,.serial_number{
+	font-size: 18px;
+} 
+}

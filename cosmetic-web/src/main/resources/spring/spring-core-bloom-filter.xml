@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+    
+    <!-- <bean id="core.likeBloomFilter" class="com.cyberlink.cosmetic.utils.BloomFilterRedis.CosmeticBloomFilterRedis" >
+    	<constructor-arg type="java.lang.String">
+			<value>${bf.redis.host}</value>
+		</constructor-arg>
+		<constructor-arg type="int">
+			<value>${bf.redis.port}</value>
+		</constructor-arg>
+		<constructor-arg type="java.lang.String">
+			<value>like.bloom.filter</value>
+		</constructor-arg>
+		<constructor-arg type="int">
+			<value>100000000</value>
+		</constructor-arg>
+		<constructor-arg type="double">
+			<value>0.01</value>
+		</constructor-arg>
+    </bean> -->
+    
+</beans>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <bean id="facebook.facebookClient" class="com.restfb.DefaultFacebookClient">
+        <constructor-arg value="411005359043504|op3iiHdYpooaZSC3Y9I_2nYPmKY" />
+        <constructor-arg value="2353492fdd77b306900634f0a892e661" />
+    </bean>
+
+    <bean id="facebook.facebookService" class="com.cyberlink.cosmetic.modules.facebook.service.impl.FacebookServiceImpl">
+        <property name="client" ref="facebook.facebookClient" />
+    </bean>
+</beans>

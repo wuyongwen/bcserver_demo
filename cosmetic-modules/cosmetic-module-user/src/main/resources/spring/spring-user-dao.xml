@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+    <bean id="user.UserDao" class="com.cyberlink.cosmetic.modules.user.dao.hibernate.UserDaoHibernate"
+        parent="core.abstractDao" />
+
+    <bean id="user.AccountDao" class="com.cyberlink.cosmetic.modules.user.dao.hibernate.AccountDaoHibernate"
+        parent="core.abstractDao" />
+
+    <bean id="user.DeclineDao" class="com.cyberlink.cosmetic.modules.user.dao.hibernate.DeclineDaoHibernate"
+          parent="core.abstractDao" />
+        
+    <bean id="user.FanPageUserDao" class="com.cyberlink.cosmetic.modules.user.dao.hibernate.FanPageUserDaoHibernate"
+        parent="core.abstractDao" />
+
+    <bean id="user.SessionDao" class="com.cyberlink.cosmetic.modules.user.dao.hibernate.SessionDaoHibernate"
+        parent="core.abstractDao" />
+
+    <bean id="user.SubscribeDao" class="com.cyberlink.cosmetic.modules.user.dao.hibernate.SubscribeDaoHibernate"
+        parent="core.abstractDao" />
+
+    <bean id="user.DeviceDao" class="com.cyberlink.cosmetic.modules.user.dao.hibernate.DeviceDaoHibernate"
+        parent="core.abstractDao" />
+
+    <bean id="user.AttributeDao" class="com.cyberlink.cosmetic.modules.user.dao.hibernate.AttributeDaoHibernate"
+        parent="core.abstractDao" />
+
+    <bean id="user.MemberDao" class="com.cyberlink.cosmetic.modules.user.dao.hibernate.MemberDaoHibernate"
+        parent="core.abstractDao" />
+
+    <bean id="user.FriendshipDao" class="com.cyberlink.cosmetic.modules.user.dao.hibernate.FriendshipDaoHibernate"
+        parent="core.abstractDao" />
+    
+    <bean id="user.AdminDao" class="com.cyberlink.cosmetic.modules.user.dao.hibernate.AdminDaoHibernate"
+        parent="core.abstractDao" />
+
+    <bean id="user.BlockDeviceDao" class="com.cyberlink.cosmetic.modules.user.dao.hibernate.BlockDeviceDaoHibernate"
+        parent="core.abstractDao" />
+    
+    <bean id="user.BlockMailDomainDao" class="com.cyberlink.cosmetic.modules.user.dao.hibernate.BlockMailDomainDaoHibernate"
+        parent="core.abstractDao" />
+    
+    <bean id="user.UserReportedDao" class="com.cyberlink.cosmetic.modules.user.dao.hibernate.UserReportedDaoHibernate"
+        parent="core.abstractDao" />
+    
+    <bean id="user.UserBlockedDao" class="com.cyberlink.cosmetic.modules.user.dao.hibernate.UserBlockedDaoHibernate"
+        parent="core.abstractDao" />
+
+	<bean id="user.userAttrDao" class="com.cyberlink.cosmetic.modules.user.dao.hibernate.UserAttrDaoHibernate"
+        parent="core.abstractDao" />
+        
+	<bean id="user.userBadgeDao" class="com.cyberlink.cosmetic.modules.user.dao.hibernate.UserBadgeDaoHibernate"
+		parent="core.abstractDao" />
+
+</beans>

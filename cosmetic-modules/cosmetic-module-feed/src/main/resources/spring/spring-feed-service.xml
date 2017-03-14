@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <bean id="feed.feedService" class="com.cyberlink.cosmetic.modules.feed.service.impl.FeedServiceImpl">
+        <property name="feedRepository" ref="feed.feedRepository" />
+        <property name="feedService" ref="feed.feedService" />
+        <!-- <property name="updater" ref="core.defaultStatsDUpdater" /> -->
+        <property name="localeService" ref="user.localeService" />
+    </bean>
+
+    <bean id="feed.poolService" class="com.cyberlink.cosmetic.modules.feed.service.impl.PoolServiceImpl">
+        <property name="circleFollowRepository" ref="circle.circleFollowRepository" />
+        <property name="poolRepository" ref="feed.poolRepository" />
+        <property name="followRepository" ref="user.followRepository" />
+        <property name="circleRepository" ref="circle.circleRepository" />
+    </bean>
+
+    <bean id="feed.smartFeedContentGenerator" class="com.cyberlink.cosmetic.modules.feed.service.impl.SmartFeedContentGeneratorImpl">
+        <property name="feedRepository" ref="feed.feedRepository" />
+        <property name="retrievers">
+            <map key-type="com.cyberlink.cosmetic.modules.feed.model.PoolType">
+                <entry key="Official" value-ref="feed.globalPoolPostRetriever" />
+                <entry key="Following" value-ref="feed.defaultPoolPostRetriever" />
+                <!-- <entry key="Related" value-ref="feed.defaultPoolPostRetriever" />
+                <entry key="Interest" value-ref="feed.defaultPoolPostRetriever" />
+                <entry key="Advertisement" value-ref="feed.globalPoolPostRetriever" /> -->
+            </map>
+        </property>
+    </bean>
+
+    <bean id="feed.abstractPoolPostRetriever" class="com.cyberlink.cosmetic.modules.feed.service.impl.AbstractPoolPostRetriever"
+        abstract="true">
+        <property name="numToRetrieve" value="2" />
+        <property name="maxIteration" value="10" />
+        <property name="poolRepository" ref="feed.poolRepository" />
+        <property name="feedRepository" ref="feed.feedRepository" />
+    </bean>
+
+    <bean id="feed.defaultPoolPostRetriever" class="com.cyberlink.cosmetic.modules.feed.service.impl.DefaultPoolPostRetriever"
+        parent="feed.abstractPoolPostRetriever">
+        <property name="numToRetrieve" value="2" />
+        <property name="maxIteration" value="10" />
+    </bean>
+
+    <bean id="feed.globalPoolPostRetriever" class="com.cyberlink.cosmetic.modules.feed.service.impl.GlobalPoolPostRetriever"
+        parent="feed.abstractPoolPostRetriever">
+        <property name="maxIteration" value="50" />
+        <property name="numToRetrieve" value="2" />
+    </bean>
+
+    <bean id="feed.feedInitializer" class="com.cyberlink.cosmetic.modules.feed.service.impl.FeedInitializerImpl">
+        <property name="poolRepository" ref="feed.poolRepository" />
+        <property name="feedRepository" ref="feed.feedRepository" />
+        <property name="localeDao" ref="common.localeDao" />
+        <property name="postDao" ref="post.PostDao" />
+    </bean>
+
+    <bean id="feed.interestPoolGenerator" class="com.cyberlink.cosmetic.modules.feed.service.impl.InterestPoolGeneratorImpl">
+        <property name="postAttributeDao" ref="post.PostAttributeDao" />
+        <property name="postDao" ref="post.PostDao" />
+        <property name="userDao" ref="user.UserDao" />
+        <property name="localeDao" ref="common.localeDao" />
+        <property name="poolRepository" ref="feed.InterestPoolRepository" />
+    </bean>
+</beans>
+

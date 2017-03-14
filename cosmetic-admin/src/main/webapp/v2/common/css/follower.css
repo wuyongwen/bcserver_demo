@@ -1,0 +1,57 @@
+@charset "utf-8";
+/* CSS Document */
+
+.follower_top{
+	height:30px;
+	margin-bottom:10px;
+	line-height: 30px;
+}
+.select_all{
+	float:left;
+	margin-right: 50px;
+}
+.add_group{
+	float:left;
+	
+}
+.add_group a{ background:#f6f6f6;background: #ffffff; color:#333333; border:1px #CCCCCC solid; display:block; padding:0 10px;}
+.search_follower{
+	float:right;
+	height:30px;
+	line-height:30px;
+	border:1px #CCCCCC solid;
+	margin-right: 17px;
+}
+.search_input{
+	float:left;
+	height: 28px;
+	border: 0;
+	padding-left: 5px;
+}
+.search_icon{ float:left; width:30px;}
+.search_icon a{ color:#666666; text-indent:10px;}
+.search_icon a:hover{ color:#000000;}
+.follower_ctn{ 
+	overflow-y: scroll;
+	overflow-x: hidden;
+}
+.follower_ctn ul{  margin:0 0 0 0; padding:0 0 0 0;}
+.follower_ctn li{
+	list-style:none;
+	line-height:28px;
+	clear:both;
+}
+.follower_ctn li a{ display:block;background:#FFFFFF; color:#333333; cursor: default;border-bottom:1px solid #b2b2b2;height:30px; text-decoration:none;}
+.follower_ctn li a:hover{ background:#f8fff1; color:#333333;}
+.follower_ctn li:first-child a{display:block;background:#FFFFFF; color:#333333; cursor: default;border-bottom:1px solid #b2b2b2; border-top:1px solid #b2b2b2;height:31px; text-decoration:none;}
+.follower_ctn li:first-child a:hover{ background:#f8fff1; color:#333333;}
+
+
+.select_follower{
+	float:left;
+	margin: 2px 5px 0 10px;
+}
+
+.follower_name{
+	float:left;
+}

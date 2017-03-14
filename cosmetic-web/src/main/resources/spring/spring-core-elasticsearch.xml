@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+    
+    <bean id="core.elasticRepository" class="com.cyberlink.cosmetic.core.repository.HttpClient.EsRepositoryHttpClient"
+        abstract="true">
+        <property name="client" ref="cosmetic.web.urlContentReader" />
+		<property name="objectMapper" ref="web.objectMapper" />
+		<property name="apiDomain" value="${elasticsearch.badge.host}" />
+    </bean>
+    
+</beans>

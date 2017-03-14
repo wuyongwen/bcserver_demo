@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="circle.circleFollowRepository"
+        class="com.cyberlink.cosmetic.modules.circle.repository.redis.CircleFollowRepositoryRedis"
+        parent="core.abstractRedisRepository.main">
+        <property name="circleSubscribeDao" ref="circle.circleSubscribeDao" />
+    </bean>
+
+    <bean id="circle.circleRepository" class="com.cyberlink.cosmetic.modules.circle.repository.redis.CircleRepositoryRedis"
+        parent="core.abstractRedisRepository.main">
+        <property name="circleDao" ref="circle.circleDao" />
+    </bean>
+
+</beans>
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <bean class="com.cyberlink.cosmetic.spring.listener.FeedWarmUpListener">
+        <property name="reader" ref="web.urlContentReader.noCache" />
+        <property name="warmUpUrl" value="${feed.warm.up.url}" />
+        <property name="iterations" value="${feed.warm.up.iterations}" />
+        <property name="threads" value="${feed.warm.up.threads}" />
+        <property name="enabled" value="${feed.warm.up.enabled}" />
+        <property name="waitForTomcatStartup" value="${feed.warm.up.wait.for.tomcat}" />
+    </bean>
+</beans>
+
+
+
+

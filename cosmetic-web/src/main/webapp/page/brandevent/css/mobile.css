@@ -1,0 +1,413 @@
+content@charset "utf-8";
+/* Simple fluid media
+   Note: Fluid media requires that you remove the media's height and width attributes from the HTML
+   http://www.alistapart.com/articles/fluid-images/ 
+*/
+img, object, embed, video {
+	max-width: 100%;
+}
+
+/* IE 6 does not support max-width so default to width 100% */
+.ie6 img {
+	width:100%;
+}
+
+
+/*-----------------------------common------------------------------*/
+#count_down,#count_down_pre,#count_down_expired,.actionButton_d{
+	font-size: 17px!important;
+	padding: 10px 0!important;
+}
+#count_down,.actionButton_n,.join,#count_down, .actionButton_n, .join{
+	font-size: 17px!important;
+	padding: 10px 0!important;
+	line-height: 22px!important;
+}
+
+h1{
+	font-size: 17px!important;
+	line-height: 20px!important;
+}
+h2{
+	font-size: 22px!important;
+	line-height: 24px!important;
+	margin: 10px 0!important;
+}
+h3{
+	font-size: 17px!important;
+	line-height: 22px!important;
+	margin-bottom:5px!important; 
+}
+h4{
+	font-size: 14px!important;
+	line-height: 16px!important;
+	margin: 0!important;
+}
+h6{
+	font-size: 13px!important;
+	line-height: 15px!important;
+	margin: 0!important;
+}
+p{
+	width: 85%;
+	font-size: 13px!important;
+	line-height: 20px!important;
+}
+#block2 #box_new{
+	width: 85%!important;
+}
+.box_img_td_new{
+	padding: 0 3.2%!important;
+}
+.fans_img_td_new{
+	padding: 0!important;
+}
+#fans,.entry{
+	display: none!important;
+}
+.line{
+	border: none!important;
+	margin:0px!important; 
+}
+
+/*-----------------------------detect device text size------------------------------*/
+
+@media screen and (max-width: 319px) {
+#block1 .title{
+	font-size: 18px!important;
+	line-height: 22px!important;
+}
+#block1 .content{
+	font-size:14px; 
+	line-height: 20px;
+}
+#count_down,.actionButton_n,.join{
+	font-size: 14px;
+	line-height: 22px!important;
+}
+
+/*#fans{
+	width: 275px!important;
+}*/
+}
+
+/* iphone4 , iphone5*/
+@media screen and (min-width: 320px) and (max-width: 359px) {
+#block1 .title{
+	font-size: 20px!important;
+	line-height: 24px!important;
+}
+#block1 .content,p{
+	font-size:13px; 
+	line-height: 20px;
+}
+#count_down,.actionButton_n,.join,#count_down, .actionButton_n, .join{
+	font-size: 16px;
+}
+
+/*#fans{
+	width: 275px!important;
+}*/
+}
+
+
+/*Samsung mega,iphone6,*/
+@media screen and (min-width: 375px) and (max-width:413px) {
+#block1 .title{
+	font-size: 20px!important;
+	line-height: 24px!important;
+}
+#block1 .contents{
+	font-size:15px; 
+}
+#count_down,.actionButton_n,.join{
+	font-size: 15px;
+}
+
+/*#fans{
+	width: 325px!important;
+}*/
+}
+/*iphone6+*/
+@media screen and (min-width: 414px) and (max-width:540px) {
+#block1 .title{
+	font-size: 20px!important;
+	line-height: 24px!important;
+}
+#block1 .contents{
+	font-size:15px; 
+}
+#count_down,.actionButton_n,.join{
+	font-size: 15px;
+}
+/*#fans{
+	width: 360px!important;
+}*/
+}
+/* S3,S4,Note3 */
+@media screen and (min-width: 360px) and (max-width: 374px) {
+#block1 .title{
+	font-size: 20px!important;
+	line-height: 24px!important;
+}
+#block1 .content{
+	font-size:15px; 
+}
+#count_down,.actionButton_n,.join{
+	font-size: 16px;
+}
+}
+
+/*Samsung mega,iphone6,iphone6+*/
+@media screen and (min-width: 375px) and (max-width:540px) {
+#block1 .title{
+	font-size: 20px!important;
+	line-height: 24px!important;
+}
+#block1 .content{
+	font-size:15px; 
+}
+#count_down,.actionButton_n,.join{
+	font-size: 15px;
+}
+p{font-size: 15px;
+}
+}
+/*larger mobile*/
+@media screen and (min-width: 540px) and (max-width: 767px) {
+#block1 .title{
+	font-size: 20px!important;
+	line-height: 24px!important;
+}
+#block1 .content{
+	font-size:17px; 
+	line-height: 24px;
+}
+#count_down,.actionButton_n,.join{
+	font-size: 20px;
+}
+}
+
+/*ipad*/
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+#block1 .title{
+	font-size: 28px!important;
+	line-height: 32px!important;	
+}
+#block1 .content{
+	font-size:20px; 
+	line-height: 34px;
+}
+#count_down,.actionButton_n,.join{
+	font-size: 22px;
+}
+#count_down,.actionButton_n,.join,#count_down, .actionButton_n, .join{
+	font-size: 22px!important;
+}
+#count_down,#count_down_pre,#count_down_expired,.actionButton_d{
+font-size: 22px!important;
+}
+h1{
+	font-size: 26px!important;
+	line-height: 30px!important;
+}
+h2{
+	font-size: 30px!important;
+	line-height: 36px!important;
+}
+h3{
+	font-size: 24px!important;
+	line-height: 30px!important;
+}
+h4{
+	font-size: 20px!important;
+	line-height: 26px!important;
+	margin: 10px 0!important;
+}
+h6{
+	font-size: 18px!important;
+	line-height: 24px!important;
+}
+p{
+	font-size: 18px!important;
+	line-height: 26px!important;
+}
+}
+/*---------------------------------------------*/
+
+#block1 .title{
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 22px;
+}
+#block1 .content{
+	font-size: 13px;
+	padding-top: 3%;
+	line-height: 21px;
+}
+
+h1{
+	width: 85%;
+	margin: auto;
+	text-align: left;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 18px;
+	color: #a969b6;
+	text-align: left;
+	padding-top: 2%;
+}
+p{
+	width: 85%;
+	margin: auto;
+	text-align: left;
+	font-size: 13px;
+	line-height: 18px;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	color: #000000;
+	text-align: left;
+}
+
+#block2 #box_new .title{
+	font-weight: bold; font-size: 14px;
+	line-height: 18px;
+}
+#block2 #box_new .type{
+	font-size: 13px; color:#a969b6;
+	line-height: 18px;
+}
+#block2 #box_new .description{
+	font-size: 11px; 
+	padding-bottom: 10!important;
+	line-height: 16px;	
+}
+.box_description_td{
+	text-align: left; 
+	padding: 2% 2% 2% 2%;
+	
+}
+#block2 #box_new .price{
+	font-size: 15px; 
+	color: #a969b6;
+	line-height: 20px;
+	font-weight: 600;
+}
+#block2 #box_new .star{
+	font-size: 13px; 
+	line-height: 18px;
+}
+#count_down{
+	color: #eb6d94;
+	width: 85%; 
+	margin: auto; 
+	border-style: dashed; 
+	border-width: thin; 
+	border-color: #eb6d94; 
+	border-radius: 8px; 
+	padding: 3%;	
+	background-image: none;
+}
+#count_down_expired{
+	color: #737373; 
+	font-size: 20px;
+	line-height: 25px;
+	width: 85%; 
+	margin: auto; 
+	border-style: dashed; 
+	border-width: thin; 
+	border-color: #eb6d94; 
+	border-radius: 8px; 
+	padding: 3.5%;	
+	background-image: none;
+}
+#count_down_pre{	
+	font-size: 20px;
+	width: 85%; 
+	margin: auto; 
+	border-style: dashed; 
+	border-width: thin; 
+	border-color: #eb6d94; 
+	border-radius: 8px; 
+	padding: 3.5%;	
+	background-image: none;
+}
+.join{
+	color: black;
+	font-size: 16px;
+	line-height: 22px;
+}
+.actionButton_n {
+	border-radius: 8px; 
+	background-color: #eb6d94;
+	font-weight: normal;
+}
+.actionButton_n a {
+	color: white; 
+}
+.actionButton_d {
+	color: white;
+	font-size: 20px;
+	line-height: 25px;
+	width: 85%; 
+	margin: auto; 
+	border-radius: 8px; 
+	padding: 3.5%;	
+	background-image: none;
+	background-color: #a0a0a0;
+	font-weight: normal;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+.checkInfoButton {
+	color: #990000; 
+	font-size: 16px;
+	line-height: 24px;
+	width: 85%; 
+	margin: auto;
+	border-style: solid; 
+	border-width: thin; 
+	border-color: #990000; 
+	border-radius: 8px; 
+	padding: 3.5%;	
+	background-image: none;	
+	margin-bottom: 5%;
+	font-weight: normal;
+}
+.unsupported{
+	color: white;
+	font-size: 11px;
+	line-height: 16px;
+	width: 85%; 
+	margin: auto; 
+	border-radius: 8px; 
+	padding: 3.5%;	
+	background-image: none;
+	background-color: #a0a0a0;
+	font-weight: normal;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+.unsupported_en{
+	color: white;
+	font-size: 11px;
+	line-height: 16px;
+	width: 85%; 
+	margin: auto; 
+	border-radius: 8px; 
+	padding: 3.5%;	
+	background-image: none;
+	background-color: #a0a0a0;
+	font-weight: normal;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+.box_img_td_new .product_img{
+	border-style: solid;
+	border-width: thin;
+	border-radius: 5px;
+	border-color: #DDDDDD;
+	box-shadow: 1px 1px 5px rgba(20%,20%,40%,0.1);
+	padding: 10%;
+	width: 80%
+}

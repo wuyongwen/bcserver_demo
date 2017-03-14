@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+	<!--  bean id="user.testSubscribeRepository" class="com.cyberlink.cosmetic.modules.user.repository.mongodb.TestSubscribeRepositoryMongo">
+		<property name="mongoTemplate" ref="core.mongoTemplate" />
+	</bean-->        
+    <bean id="user.followRepository" class="com.cyberlink.cosmetic.modules.user.repository.redis.FollowRepositoryRedis"
+        parent="core.abstractRedisRepository.main">
+        <property name="subscribeDao" ref="user.SubscribeDao" />
+    </bean>
+    
+    <bean id="user.interestUserRepository" class="com.cyberlink.cosmetic.modules.user.repository.redis.InterestUserRepositoryRedis"
+        parent="core.abstractRedisRepository.main">
+    </bean>
+	
+	<bean id="user.feedJoinerRepository" class="com.cyberlink.cosmetic.modules.user.repository.redis.FeedJoinerRepositoryRedis"
+        parent="core.abstractRedisRepository.main">
+    </bean>
+    
+    <bean id="user.userHeatRepository" class="com.cyberlink.cosmetic.modules.user.repository.elasticsearch.UserHeatRepositoryES"
+    	parent="core.elasticRepository">
+    </bean>	
+
+    <bean id="user.userSessionRepository" class="com.cyberlink.cosmetic.modules.user.repository.redis.UserSessionRepositoryRedis"
+    	parent="core.abstractRedisRepository.main">
+    </bean>
+    
+    <bean id="user.userInfoRepository" class="com.cyberlink.cosmetic.modules.user.repository.redis.UserInfoRepositoryRedis"
+    	parent="core.abstractRedisRepository.main">
+    </bean>	
+    
+</beans>

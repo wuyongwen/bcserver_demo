@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+    <bean id="gcm.httpclient" class="org.apache.http.impl.client.DefaultHttpClient">
+    </bean>
+
+    <bean id="gcm.YMKService" class="com.cyberlink.cosmetic.modules.gcm.model.GCM">
+        <property name="httpclient" ref="gcm.httpclient" />
+        <property name="apiKey" value="AIzaSyA18HpyZW3fRF1iQFaVkNu2LwfCGok5YJ4" />    
+    </bean>
+    <bean id="gcm.YCPService" class="com.cyberlink.cosmetic.modules.gcm.model.GCM">
+        <property name="httpclient" ref="gcm.httpclient" />
+        <property name="apiKey" value="AIzaSyAfKVawPKwFIcK9l0E3IvV07YAfepZWPtc" />    
+    </bean>
+    <bean id="gcm.YCNService" class="com.cyberlink.cosmetic.modules.gcm.model.GCM">
+        <property name="httpclient" ref="gcm.httpclient" />
+        <property name="apiKey" value="AIzaSyCGa8s046e4Fh9JrwOUhsJ_vi4rUZSL_tY" />    
+    </bean>
+    <bean id="gcm.YBCService" class="com.cyberlink.cosmetic.modules.gcm.model.GCM">
+        <property name="httpclient" ref="gcm.httpclient" />
+        <property name="apiKey" value="AIzaSyAQsOLq9EAL_HRgh1GQSjVK2n7rphhrfNE" />    
+    </bean>
+
+</beans>

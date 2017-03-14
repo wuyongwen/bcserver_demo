@@ -1,0 +1,94 @@
+@charset "utf-8";
+/*Preview*/
+.previewurl{
+	width:60%;
+	background:#FFFFFF;
+	border-radius:4px;
+	padding:1%;
+	margin:0 auto;
+}
+.previewurl_poster{ }
+.previewurl_top{ padding:2px;}
+.previewurl_coverart{ float:left; width:45px; height:45px; border-radius:45px; margin-right:7px;}
+.previewurl_coverart img{ width:45px; height:45px; border-radius:45px;}
+.previewurl_right{ float:left;}
+.previewurl_headline{ font-size:16px; font-weight:500; padding-bottom:2px; color:#000000; }
+.previewurl_timeinfo{ height:15px; }
+.previewurl_icon{ float:left; margin-right:3px;}
+.previewurl_time{ float:left;color:#5a5a5a; font-size:12px;margin-top:3px; line-height:15px;}
+.previewurl_ctntoptitle{
+	font-size:16px;
+	font-weight:500;
+	color:#000000;
+	padding: 5px 0 5px 2px;
+}
+.previewurl_ctn{
+	background:#f2f2f2;
+	border:#e3e3e3 1px solid;
+	color: #000000;
+	padding: 4px;
+}
+.previewurl_ctn p{
+	padding-top:10px;
+	line-height:18px;
+	font-size: 14px;
+	font-weight: normal;
+}
+.previewurl_ctn p a{ color:#0066ff; text-decoration:none;}
+.previewurl_ctn img{ width:100%; height:auto;}
+
+.post_create_cancelbtn2{
+	float:right;
+	height:35px;
+	line-height:35px;
+	text-align:center;
+	width:120px;
+	color:#FFFFFF;
+	font-size:14px;
+	margin-right: 10px;
+	
+}
+.post_create_cancelbtn2 a{
+	display:block; 
+	color:#FFFFFF; 
+	background:#000000;
+}
+.post_create_cancelbtn2 a:hover{ background:#2a2a2a;}
+
+.preview_ctn{
+	
+	padding: 4px;
+}
+.preview_ctn p{
+	padding-top:10px;
+	line-height:18px;
+	font-size: 14px;
+	font-weight: normal;
+}
+.preview_ctn img{ width:100%; height:auto;}
+
+.post_view_editbtn{
+	float:right;
+	height:35px;
+	line-height:35px;
+	text-align:center;
+	width:120px;
+	color:#FFFFFF;
+	font-size:14px;
+	margin-right: 10px;
+}
+.post_view_editbtn a{ display:block; color:#FFFFFF; background:#49a4ff;}
+.post_view_editbtn a:hover{ background:#5eaefe}
+
+.post_view_deletebtn{
+	float:right;
+	height:35px;
+	line-height:35px;
+	text-align:center;
+	width:120px;
+	color:#FFFFFF;
+	font-size:14px;
+	margin-right: 10px;
+}
+.post_view_deletebtn a{ display:block; color:#FFFFFF; background:#888888;}
+.post_view_deletebtn a:hover{ background:#999999}

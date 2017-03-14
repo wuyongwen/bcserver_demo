@@ -1,0 +1,17 @@
+#countTable td { 
+	border-width:1px; 
+	border-style:solid;
+}
+
+#dateTable td { 
+	border-width:1px; 
+	border-style:solid;
+	border-right-style:none;
+}
+
+#detailDiv { 
+	background-color: #f5f5f5;
+	border-width:1px; 
+	border-style:solid;
+	border-style:outset;
+}

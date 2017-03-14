@@ -1,0 +1,147 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	width:100%;
+	height:100%;
+	background-image: url(../images/SignInbg1.jpg);
+	background-size:cover;
+	background-position:bottom center;
+	
+	}
+.u_logo{
+	float:left;
+	margin-left: 25px;
+	margin-right: 15px;
+}
+.u_logotxt{ float:left;}
+.signin{
+	margin-top:53px;
+}
+.signin_left{
+	float:left;
+}
+
+.signin_right{
+	width: 471px;
+	margin: 0 auto;
+	background: rgba(254, 254 ,254, 0.1);
+	height: 450px;
+	top: 50px;
+	margin-top: 8%;
+	border: 1px solid #ffffff;
+	
+
+}
+.top_logo{ width:382px; margin:0 auto;}
+.signin_right h1{
+	font-size:40px;
+	font-weight:400;
+	color:#45d022;
+	margin:0 auto;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+.signin_right h2{
+	color:#45d022;
+	font-size:16px;
+	margin-top:5px;
+	font-weight:normal;
+	padding-left: 2px;
+}
+.signin_right h3{
+	font-size:24px;
+	color:#45d022;
+	font-weight:normal;
+}
+.signin_info{
+	margin-top:50px;
+	margin: 0 auto;
+
+}
+.signin_toptitle{
+	color:#000000;
+	font-size:26px;
+	text-align: center;
+	margin-top: 20px;
+	
+}
+.signin_area{
+	width:342px;
+	height:93px;
+	margin-top: 15px;
+	margin: 0 auto;
+}
+
+input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+.signin_fillin_list{
+	background:transparent;
+	font-size:18px;
+	border:0;
+	height:47px;
+	line-height:47px;
+	color:#ffffff;
+	width: 100%;
+	padding: 0 10px 0 5px;
+}
+
+.signin_fillin_list:focus{
+outline: pink solid 2px;
+}
+
+.remember{
+	font-size:14px;
+	color:#FFFFFF;
+	padding-top: 20px;
+	width: 342px;
+	margin: 0 auto;
+	padding-bottom: 20px;
+}
+.checkbox_rememberme{
+	margin:0px 10px 0 0px;
+	float:left;
+	width: 20px;
+}
+.signin_btn{
+	background:#cc3366;
+	border: none;
+	line-height:40px;
+	width: 60%;
+	margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+	display:block;
+	color:#FFFFFF;
+	text-decoration:none;
+	text-align:center;
+	font-size: 18px;
+	font-weight: 600;	
+}
+
+.signin_btn :hover{
+	background:#e8487d;
+	height:40px;
+	
+}
+.cl_logo{
+	position:absolute;
+	margin: 0 0 0 280px;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    white;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    white;
+   opacity:  1;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    white;
+   opacity:  1;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    white;
+}

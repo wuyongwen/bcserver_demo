@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+    <bean id="apns.config.ymk" class="com.dbay.apns4j.model.ApnsConfig">
+    </bean>
+    <bean id="apns.config.ycp" class="com.dbay.apns4j.model.ApnsConfig">
+    </bean>
+    <bean id="apns.config.ycn" class="com.dbay.apns4j.model.ApnsConfig">
+    </bean>
+    <bean id="apns.config.ybc" class="com.dbay.apns4j.model.ApnsConfig">
+    </bean>
+</beans>

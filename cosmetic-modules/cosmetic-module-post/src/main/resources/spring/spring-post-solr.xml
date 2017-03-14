@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+<!--  
+    <bean id="post.solrPostUpdater" class="com.cyberlink.cosmetic.modules.post.service.impl.SolrPostUpdaterImpl">
+        <property name="postDao" ref="post.PostDao" />
+        <property name="server" ref="solr.server.post" />
+        <property name="sessionFactory" ref="core.sessionFactory" />
+    </bean>
+
+    <bean id="abstract.solr.server" class="org.apache.solr.client.solrj.impl.CommonsHttpSolrServer"
+        abstract="true">
+        <property name="soTimeout" value="100000" />
+        <property name="connectionTimeout" value="100000" />
+        <property name="defaultMaxConnectionsPerHost" value="100" />
+        <property name="followRedirects" value="false" />
+        <property name="allowCompression" value="true" />
+        <property name="maxRetries" value="1" />
+    </bean>
+
+    <bean id="post.solrPostDao" class="com.cyberlink.cosmetic.modules.post.dao.impl.SolrPostDaoImpl">
+        <property name="postDao" ref="post.PostDao" />
+        <property name="server" ref="solr.server.post" />
+        <property name="suggestServer" ref="solr.server.suggestPostKeyword" />
+    </bean>
+
+	<bean id="solr.server.post" parent="abstract.solr.server">
+        <constructor-arg value="${solr.server}/post" />
+    </bean>
+    
+    <bean id="solr.server.suggestPostKeyword" parent="abstract.solr.server">
+        <constructor-arg value="${solr.server}/suggest" />
+    </bean>
+-->    
+</beans>

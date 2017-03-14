@@ -1,0 +1,26 @@
+.account-setting-layout {
+    height: 40px;
+    border-bottom: #ddd 1px solid;
+    margin: 0px 10px 0px 10px;
+    padding: 10px 0px 10px 0px;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.account-setting-layout .icon-setting {
+    background-image: url(../../images/media/setting1.gif);
+    background-position: right center;
+    background-repeat: no-repeat;
+    float: right;
+    height: 18px;
+    line-height: 18px;
+    padding-right: 25px;
+    white-space: nowrap;
+    color: #333;
+}
+
+.account-setting-layout a.icon-setting:hover {
+    background-image: url(../../images/media/setting2.gif);
+    text-decoration: none;
+    color: #ef7c1f;
+}

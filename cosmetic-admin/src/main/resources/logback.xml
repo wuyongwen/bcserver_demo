@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="300 seconds" debug="false">
+
+    <property resource="cosmetic.properties" />
+
+    <logger name="org.apache.commons.digester.Digester" level="OFF" />
+    <logger name="org.apache.activemq.transport.InactivityMonitor" level="OFF" />
+    <logger name="org.springframework.beans.factory.support.DefaultListableBeanFactory"
+        level="OFF" />
+    <logger name="net.jawr.web.resource" level="OFF" />
+    <logger name="org.directwebremoting" level="OFF" />
+    <logger name="net.sourceforge.stripes.controller" level="OFF" />
+    <logger name="org.springframework" level="INFO" />
+    <logger name="org.apache.commons.httpclient" level="OFF" />
+    <logger name="org.hibernate" level="INFO" />
+    <logger name="org.apache.jasper" level="OFF" />
+    <logger name="net.sf.ehcache" level="INFO" />
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>${logback.logging.file.path}/backend-${HOSTNAME}-profiler.log</file>
+        <append>true</append>
+        <encoder>
+            <charset>UTF-8</charset>
+            <pattern>%date [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logback.logging.file.path}/backend-${HOSTNAME}-profiler-%d{yyyy-MM-dd}.zip</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+
+    <if condition='property("logback.logging.appender").equals("FILE")'>
+        <then>
+            <root level="${logback.logging.level}">
+                <appender-ref ref="FILE" />
+            </root>
+        </then>
+        <else>
+            <root level="${logback.logging.level}">
+                <appender-ref ref="CONSOLE" />
+            </root>
+        </else>
+    </if>
+</configuration>

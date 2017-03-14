@@ -1,0 +1,59 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.io.File;
+
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+
+import tupu.TupuConstant;
+import tupu.TupuClient;
+
+public class Main {
+    static JSONArray arrayData = new JSONArray();
+    static List<String> result = new ArrayList<String>();
+    
+    @SuppressWarnings("unchecked")
+    public static void addFilesFormFolder(final File folder) {
+        for (final File fileEntry : folder.listFiles()) {
+            if (fileEntry.isDirectory()) {
+                addFilesFormFolder(fileEntry);
+            } else {
+                JSONObject objData = new JSONObject();
+                objData.put("ID", fileEntry.getPath());
+                objData.put("FILE_PATH", fileEntry.getPath());
+                arrayData.add(objData);
+            }
+        }
+    }
+    
+    @SuppressWarnings("unchecked")
+    public static void main(String[] args) {
+        TupuClient tc = new TupuClient();
+        
+        // ---- fake data: urls ---- 
+        
+        //        JSONObject objData1 = new JSONObject();
+        //        JSONObject objData2 = new JSONObject();
+        //        
+        //        objData1.put("ID", "123");
+        //        objData1.put("FILE_PATH", "http://img.my.csdn.net/uploads/201302/01/1359697713_5224.png");
+        //        
+        //        objData2.put("ID", "456");
+        //        objData2.put("FILE_PATH", "http://i.mmcdn.cn/simba/img/TB1Z465HFXXXXceXVXXSutbFXXX.jpg");
+        //        
+        //        arrayData.add(objData1);
+        //        arrayData.add(objData2);
+        
+        // ---- fake data: files ---- 
+        final File folder = new File("C:\\Users\\roger_chen\\Pictures\\is");
+        addFilesFormFolder(folder);
+        
+        // ---- detect with specific type ---- 
+        
+        result = tc.run(arrayData, TupuConstant.DetectType.PORN);
+        //        result = tc.run(arrayData, TupuConstant.DetectType.VIOLENCE);
+        //        result = tc.run(arrayData, TupuConstant.DetectType.AD);
+        
+        System.out.println(result.toString());
+    }
+}

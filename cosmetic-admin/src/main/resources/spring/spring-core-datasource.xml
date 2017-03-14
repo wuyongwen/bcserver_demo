@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <bean id="core.dataSource" class="org.logicalcobwebs.proxool.ProxoolDataSource">
+        <property name="driver" value="${db.driver}" />
+        <property name="driverUrl" value="${db.url}" />
+        <property name="user" value="${db.user}" />
+        <property name="password" value="${db.pass}" />
+        <property name="houseKeepingSleepTime" value="60000" />
+        <property name="maximumConnectionCount" value="100" />
+        <property name="minimumConnectionCount" value="10" />
+        <property name="maximumActiveTime" value="3600000" />
+        <property name="maximumConnectionLifetime" value="86400000" />
+        <property name="verbose" value="false" />
+        <property name="trace" value="false" />
+    </bean>
+</beans>

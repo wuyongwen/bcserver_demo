@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <bean class="com.cyberlink.cosmetic.modules.user.listener.UserFollowEventListener">
+        <property name="followRepository" ref="user.followRepository" />
+        <property name="order" value="10" />
+    </bean>
+
+    <bean class="com.cyberlink.cosmetic.modules.user.listener.UserUnfollowEventListener">
+        <property name="followRepository" ref="user.followRepository" />
+        <property name="order" value="10" />
+    </bean>
+
+    <bean class="com.cyberlink.cosmetic.modules.user.listener.UserBlockEventListener">
+        <property name="followRepository" ref="user.followRepository" />
+        <property name="order" value="20" />
+    </bean>
+
+    <bean class="com.cyberlink.cosmetic.modules.user.listener.UserDeleteEventListener">
+        <property name="followRepository" ref="user.followRepository" />
+        <property name="order" value="20" />
+    </bean>
+    
+    <bean class="com.cyberlink.cosmetic.modules.user.listener.CircleUnfollowEventListener">
+        <property name="followRepository" ref="user.followRepository" />
+        <property name="order" value="20" />
+    </bean>
+    
+    <bean class="com.cyberlink.cosmetic.modules.user.listener.UserNameUpdateEventListener">
+        <property name="subscribeDao" ref="user.SubscribeDao" />
+        <property name="order" value="10" />
+    </bean>
+
+    <bean class="com.cyberlink.cosmetic.modules.user.listener.UserBadgeEventListener">
+    	<property name="userHeatRepository" ref="user.userHeatRepository" />
+    	<property name="userDao" ref="user.UserDao" />
+    	<property name="localeDao" ref="common.localeDao" />
+    	<property name="transactionTemplate" ref="core.jdbcTemplate" />
+    	<property name="userService" ref="user.userService" />
+        <property name="order" value="10" />
+    </bean>
+</beans>

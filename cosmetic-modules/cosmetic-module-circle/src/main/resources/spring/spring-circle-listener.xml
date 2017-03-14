@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <bean class="com.cyberlink.cosmetic.modules.circle.listener.CircleFollowEventListener">
+        <property name="circleFollowRepository" ref="circle.circleFollowRepository" />
+        <property name="order" value="10" />
+    </bean>
+
+    <bean class="com.cyberlink.cosmetic.modules.circle.listener.CircleUnfollowEventListener">
+        <property name="circleFollowRepository" ref="circle.circleFollowRepository" />
+        <property name="circleRepository" ref="circle.circleRepository" />
+        <property name="followRepository" ref="user.followRepository" />
+        <property name="order" value="10" />
+    </bean>
+
+    <bean class="com.cyberlink.cosmetic.modules.circle.listener.UserFollowEventListener">
+        <property name="circleFollowRepository" ref="circle.circleFollowRepository" />
+        <property name="circleRepository" ref="circle.circleRepository" />
+        <property name="order" value="10" />
+    </bean>
+
+    <bean class="com.cyberlink.cosmetic.modules.circle.listener.UserBlockEventListener">
+        <property name="circleService" ref="circle.circleService" />
+        <property name="order" value="10" />
+    </bean>
+
+    <bean class="com.cyberlink.cosmetic.modules.circle.listener.UserDeleteEventListener">
+        <property name="circleService" ref="circle.circleService" />
+        <property name="order" value="10" />
+    </bean>
+
+    <bean class="com.cyberlink.cosmetic.modules.circle.listener.CircleCreateEventListener">
+        <property name="circleRepository" ref="circle.circleRepository" />
+        <property name="order" value="10" />
+    </bean>
+
+	<bean class="com.cyberlink.cosmetic.modules.circle.listener.CircleOpenEventListener">
+        <property name="circleRepository" ref="circle.circleRepository" />
+        <property name="order" value="10" />
+    </bean>
+    
+    <bean class="com.cyberlink.cosmetic.modules.circle.listener.CircleCloseEventListener">
+        <property name="circleService" ref="circle.circleService" />
+        <property name="order" value="20" />
+    </bean>
+
+    <bean class="com.cyberlink.cosmetic.modules.circle.listener.CircleDeleteEventListener">
+        <property name="circleService" ref="circle.circleService" />
+        <property name="order" value="20" />
+    </bean>
+</beans>

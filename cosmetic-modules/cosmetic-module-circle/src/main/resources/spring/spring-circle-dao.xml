@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <bean id="circle.circleDao" class="com.cyberlink.cosmetic.modules.circle.dao.hibernate.CircleDaoHibernate"
+        parent="core.abstractDao" />
+
+    <bean id="circle.circleTypeDao" class="com.cyberlink.cosmetic.modules.circle.dao.hibernate.CircleTypeDaoHibernate"
+        parent="core.abstractDao" />
+        
+    <bean id="circle.circleTagDao" class="com.cyberlink.cosmetic.modules.circle.dao.hibernate.CircleTagDaoHibernate"
+        parent="core.abstractDao" />
+        
+    <bean id="circle.circleTagGroupDao" class="com.cyberlink.cosmetic.modules.circle.dao.hibernate.CircleTagGroupDaoHibernate"
+        parent="core.abstractDao" />
+
+    <bean id="circle.circleUserDao" class="com.cyberlink.cosmetic.modules.circle.dao.hibernate.CircleUserDaoHibernate"
+        parent="core.abstractDao" />		
+        
+	<bean id="circle.circleSubscribeDao" class="com.cyberlink.cosmetic.modules.circle.dao.hibernate.CircleSubscribeDaoHibernate"
+        parent="core.abstractDao" />	
+        
+	<bean id="circle.circleAttributeDao" class="com.cyberlink.cosmetic.modules.circle.dao.hibernate.CircleAttributeDaoHibernate"
+        parent="core.abstractDao" />	
+        
+	<bean id="circle.circleTypeGroupDao" class="com.cyberlink.cosmetic.modules.circle.dao.hibernate.CircleTypeGroupDaoHibernate"
+        parent="core.abstractDao" />	
+</beans>

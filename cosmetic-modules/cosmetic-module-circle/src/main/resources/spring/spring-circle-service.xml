@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+	<bean id="circle.circleService" class="com.cyberlink.cosmetic.modules.circle.service.impl.CircleServiceImpl">
+		<property name="circleTypeGroupDao" ref="circle.circleTypeGroupDao" />
+        <property name="circleTypeDao" ref="circle.circleTypeDao" />
+        <property name="circleDao" ref="circle.circleDao" />
+        <property name="userDao" ref="user.UserDao" />
+        <property name="circleRepository" ref="circle.circleRepository" />
+        <property name="circleFollowRepository" ref="circle.circleFollowRepository" />
+    </bean>
+	<bean id="circle.circleFollowReCountService" class="com.cyberlink.cosmetic.modules.circle.service.impl.CircleFollowReCountServiceImpl">
+		<property name="subscribeDao" ref="user.SubscribeDao" />
+        <property name="circleAttributeDao" ref="circle.circleAttributeDao" />
+        <property name="circleSubscribeDao" ref="circle.circleSubscribeDao" />
+        <property name="circleDao" ref="circle.circleDao" />
+    </bean>
+</beans>

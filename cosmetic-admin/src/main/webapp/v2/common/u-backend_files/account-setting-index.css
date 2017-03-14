@@ -1,0 +1,49 @@
+#accountSettingApp {
+	
+	width:310px;float: right;
+	margin: 5px 30px 0px 10px;
+	padding: 0px 0px 0px 0px;
+	white-space: nowrap;
+}
+
+#accountSettingApp .account-setting-action {
+	text-align:right;
+	
+}
+
+#accountSettingApp .account-setting-action a {
+	height: 18px;
+	line-height: 18px;
+	color:#FFFFFF;
+	margin-right:0px;
+}
+
+#accountSettingApp .account-setting-action a:hover {
+	text-decoration: none;
+	color:#333333;
+	
+}
+
+#accountSettingApp .account-setting-action a:focus {
+	text-decoration: none;
+	color:#333333;
+	
+}
+
+#accountSettingApp .account-setting-action .dropdown-menu li {
+	text-align: center;
+	height: 22px;
+	line-height: 22px;
+	
+}
+#accountSettingApp .account-setting-action .dropdown-menu li a {
+	text-align: center;
+	height: 22px;
+	line-height: 22px;
+	background:#333333;
+	
+}
+
+#accountSettingApp .account-setting-action .dropdown-menu a:hover {
+	background-color: #FFFFFF;
+}

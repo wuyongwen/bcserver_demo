@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <bean class="com.cyberlink.core.event.impl.EventListenerRegisterListener">
+        <property name="eventManager">
+            <bean class="com.cyberlink.core.event.impl.DefaultEventManager" />
+        </property>
+    </bean>
+    
+    <bean id="core.applicationEventPublisherHolder" class="com.cyberlink.core.event.impl.ApplicationEventPublisherHolderImpl"/>
+    
+</beans>

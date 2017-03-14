@@ -1,0 +1,540 @@
+/*custom font*/
+@import url(http://fonts.googleapis.com/css?family=Montserrat);
+
+/*basic reset*/
+* {margin: 0; padding: 0;}
+
+html {
+	height: 100%;
+}
+
+body {
+	font-family: montserrat, arial, verdana;
+}
+
+table.displaytag tr.tableRowEven,table.displaytag tr.even {
+	background-color: #fff
+}
+
+/*form styles*/
+#msform {
+	width: 100%;
+	text-align: center;
+	position: relative;
+}
+#msform fieldset {
+	width: 80%;
+	max-width: 80%;
+	min-height: 300px;
+	margin: 0 auto;
+	
+	/*stacking fieldsets above each other*/
+	position: relative;
+}
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+	display: none;
+}
+
+.action-button, #msform {
+	font-weight: bold;	
+}
+
+.action-button {
+	width: 100px;
+	background: #3C769D;
+	color: white;
+	border: 0 none;
+	border-radius: 5px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
+}
+
+#msform .checkboxes label {
+	width: 10%;
+	display: inline-block;
+	color: black;
+	border-radius: 5px;
+	cursor: pointer;
+	padding: 10px 5px;
+	margin: 10px 5px;
+	font-size: 15px;
+}
+
+.checkboxes .checkedLabel {
+	background: #9dd53a;
+	background: -moz-linear-gradient(top,  #9dd53a 0%, #a1d54f 50%, #80c217 51%, #7cbc0a 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9dd53a), color-stop(50%,#a1d54f), color-stop(51%,#80c217), color-stop(100%,#7cbc0a));
+	background: -webkit-linear-gradient(top,  #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%);
+	background: -o-linear-gradient(top,  #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%);
+	background: -ms-linear-gradient(top,  #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%);
+	background: linear-gradient(to bottom,  #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9dd53a', endColorstr='#7cbc0a',GradientType=0 );
+}
+
+.checkBoxes .unCheckedLabel {
+	border: 1px solid red;
+}
+
+#msform .next ,.createPostButton{
+	position:absolute;
+    bottom: 0px;
+    right: 30px;
+}
+
+#msform .previous {
+	position:absolute;
+    bottom: 0px;
+    right: 140px;
+}
+
+#msform .addSubPost {
+	position:absolute;
+    bottom: 0px;
+    right: 250px;
+}
+
+.action-button:hover, .action-button:focus,#msform {
+	box-shadow: 0 0 0 2px white, 0 0 0 3px #3C769D;
+}
+
+/*headings*/
+.fs-title {
+	font-size: 15px;
+	text-transform: uppercase;
+	color: #2C3E50;
+	margin-bottom: 10px;
+}
+.fs-subtitle {
+	font-weight: normal;
+	font-size: 13px;
+	color: #666;
+	margin-bottom: 20px;
+}
+/*progressbar*/
+#progressbar {
+	margin-bottom: 10px;
+	overflow: hidden;
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+#progressbar li {
+	list-style-type: none;
+	color: black;
+	text-transform: uppercase;
+	font-size: 9px;
+	width: 25%;
+	float: left;
+	position: relative;
+}
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	font-size: 10px;
+	color: black;
+	background: white;
+	border-radius: 3px;
+	margin: 0 auto 5px auto;
+}
+/*progressbar connectors*/
+#progressbar li:after {
+	content: '';
+	width: 100%;
+	height: 2px;
+	background: #00CC99;
+	position: absolute;
+	left: -50%;
+	top: 9px;
+	z-index: -1; /*put it behind the numbers*/
+}
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+	background: #3C769D;
+	color: white;
+}
+
+.cke_editable {
+	text-align: left;
+}
+	
+img #previewCover {
+    display: block;
+    margin-left: auto;
+    margin-right: auto 
+}
+
+div #postContentInput {
+	width:100px;
+	height:50px;
+	border:1px solid #000;
+}
+
+#postContentTable th {
+	color:#D5DDE5;;
+	background:#1b1e24;
+	border-bottom:4px solid #9ea7af;
+	border-right: 1px solid #343a45;
+	font-size:23px;
+	font-weight: 100;
+	padding:24px;
+	text-align:left;
+	text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+	vertical-align:middle;
+}
+  
+#postContentTable tr {
+	color:#666B85;
+	font-size:16px;
+	font-weight:normal;
+	text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);
+	padding-top: .5em;
+    padding-bottom: .5em;
+}
+ 
+#postContentTable tr:hover td {
+	background:#4E5066;
+	color:#FFFFFF;
+	border-top: 1px solid #22262e;
+	border-bottom: 1px solid #22262e;
+	padding-top: .5em;
+	padding-bottom: .5em;
+}
+
+#postContentTable td {
+	background:#FFFFFF;
+	padding:20px;
+	text-align:left;
+	vertical-align:middle;
+	font-weight:300;
+	font-size:18px;
+	text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+	border-right: 1px solid #C1C3D1;
+	padding-top: .5em;
+    padding-bottom: .5em;
+}
+
+.lPostDiv {
+	margin-left: auto;
+   	margin-right: auto;
+   	width: 40%;
+	border-radius: 10px;
+   	background-color: #FFFFFF;
+	box-shadow: 0px 0px 15px 1px;
+	padding: 17px 35px 12px 35px;
+	text-align: left;
+ }
+ 
+.lPostDiv:hover{
+   	box-shadow: 0px 0px 30px 2px #477FAE;
+	cursor:pointer;
+}
+
+.qPostDiv {
+	margin-left: auto;
+	margin-right: auto;
+	width: 40%;
+	border-radius: 10px;
+	background-color: #FFFFFF;
+	box-shadow: 0px 0px 15px 1px;
+	padding: 17px 35px 12px 35px;
+	text-align: left;
+ }
+ 
+.lPostHeader {
+	min-height: 50px;
+ }
+ 
+.lAvatarDiv {
+	max-width: 50px;
+	max-height: 50px;
+	min-height: 50px;
+	min-width: 50px;
+	float: left;
+	overflow: hidden;
+ }
+ 
+.lAvatar {
+	max-height: 100%;
+	max-width: 100%;
+ }
+ 
+.lNameDate {
+	width: 80%;
+	padding: 10px 0px 0px 70px;
+ }
+ 
+.lUserName {
+	color: #000000;
+	font-family: 'Sans-serif';
+	font-style: normal;
+	font-weight: bold;
+	font-size: 14pt;
+	line-height: 14pt;
+ }
+ 
+.lLastModifiedDate {
+	width: 100%;
+	display: block;
+	color: #8d8d8d;
+	font-family: 'Sans-serif';
+	font-style: normal;
+	font-size: 12pt;
+	line-height: 12pt;
+ }
+
+.llCoverBody {
+	max-width: 100%;
+	padding: 10px 0px 10px 0px;
+	overflow: hidden;
+ }
+ 
+.llPhotoBody {
+	max-width: 100%;
+	padding: 2px 0px 2px 0px;
+}
+ 
+.lPhoto {
+	width: 100%;
+	padding-bottom: 2px;
+}
+ 
+.lCover {
+	max-width: 100%;
+	min-width: 100%;
+ }
+ 
+.lPostTitleDiv {
+	max-width: 100%;
+	padding: 20px 0px 10px 0px;
+	color: #000000;
+	font-family: 'Segeo UI Semibold';
+	font-style: normal;
+	font-size: 18pt;
+	line-height: 18pt;
+ }
+
+.lPostContentDiv {
+	color: #000000;
+	font-family: 'Helvetica';
+	font-style: normal;
+	font-size: 14px;
+	padding: 10px 0px 10px 0px;
+	word-wrap: break-word;
+	width: 100%;
+	font-family: "Apple Color Emoji","Segoe UI Emoji","NotoColorEmoji","Segoe UI Symbol","Android Emoji","EmojiSymbols";
+ }
+ 
+ 
+#msform .bottoomField {
+	min-height:630px;
+}
+ 
+.leftField {
+ 	overflow:scroll;
+ 	max-height:610px;
+ 	max-width: 100%;
+}
+ 
+.rightField {
+	min-height: 35px;
+}
+
+.lLikeCountDiv {
+	color: #8d8d8d;
+	font-family: 'arial';
+	font-style: normal;
+	font-size: 12px;
+	padding: 0px 0px 10px 0px;
+ }
+ 
+.lPostInteractDiv {
+	width: 100%;
+	min-height: 80px;
+ }
+ 
+.lLikeAction {
+	float: left;
+	color: #5e5e5e;
+	font-family: 'arial black';
+	font-style: normal;
+	font-size: 14px;
+	min-width:50%;
+	margin: 0px 0px 0px 0px;
+	background:url("./image/ico_reward_like.png");
+ 	background-repeat: no-repeat;
+ 	background-size: auto 100%;
+ 	background-position: 40% 50%;
+ }
+ 
+.lCommentAction {
+	float: right;
+	color: #5e5e5e;
+	font-family: 'arial black';
+	font-style: normal;
+	font-size: 14px;
+	min-width:50%;
+	margin: 0px 0px 0px 0px;
+	background:url("./image/ico_reward_comment.png");
+ 	background-repeat: no-repeat;
+ 	background-size: auto 100%;
+ 	background-position: 33% 50%;
+ }
+ 
+ .listLikeAction, .listCommentAction {
+	float: left;
+	color: #5e5e5e;
+	font-family: 'arial black';
+	font-style: normal;
+	font-size: 14px;
+	width:100%;
+	text-align: left;
+	margin: 0px 0px 0px 0px;
+	background-color: white;
+ }
+
+.divider {
+	background-color:#A186C4;
+	max-height: 2px;
+	margin:20px auto;
+	overflow:hidden;
+	text-align:center;
+	line-height:1px;
+	padding-bottom: 0px;
+	padding-top: 0px;
+ }
+
+   
+.postRemove, .postDelete, .postModify, .lPostDiv #publishPostBtn, .commentDelete, .lPostDiv #submitPostBtn {
+	width: auto;
+	height: auto;
+	float: right;
+	padding: 10px 10px 10px 10px;
+	font-size: 14px;
+	border-radius: 2px;
+ }
+ 
+.lPostDiv #submitPostBtn {
+	display:none;
+}
+
+.postRemove:hover, .postDelete:hover, .postModify:hover, .lPostDiv #publishPostBtn:hover, .commentDelete:hover, .lPostDiv #submitPostBtn:hover {
+   	background-color: rgba(255,0,0,0.1);
+	cursor:pointer;
+	color: red;
+}
+
+.lPostComment {
+	margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    border: 1px #a3a3a3 solid;
+}
+  
+.commentAvatarDiv {
+	min-height: 76px;
+	min-width: 76px;
+	height: 76px;
+	width: 76px;
+	float: left;
+	overflow: hidden;
+	border-radius: 38px;
+	margin: 5px 15px 5px 15px;
+}
+  
+.lCmtFooterDiv {
+	padding: 0px 0px 0px 86px;
+	display: block;
+  }
+  
+  .lCmtAvatar {
+	height: auto;
+	width: 100%;
+}
+  
+.lCmtUserName {
+	color: #000000;
+	font-family: 'Sans-serif';
+	font-style: normal;
+	font-size: 20pt;
+	padding: 0px 0px 0px 86px;
+	display: block;
+}
+  
+.lCmtComment {
+	color: #343434;
+	font-family: 'arial';
+	font-style: normal;
+	font-size: 18px;
+	padding: 2px 0px 0px 86px;
+	display: block;
+	font-family: "Apple Color Emoji","Segoe UI Emoji","NotoColorEmoji","Segoe UI Symbol","Android Emoji","EmojiSymbols";
+}
+  
+.lCmtLastModifiedDate {
+	color: #8d8d8d;
+	font-family: 'Sans-serif';
+	font-style: normal;
+	font-size: 13pt;
+}
+  
+.lCmtLikeAction {
+	color: #A186C4;
+	font-family: 'arial';
+	font-style: normal;
+	font-size: 15px;
+}
+  
+.goTop {
+	background-image: url("./image/up-icon.png");
+	background-repeat: no-repeat;
+	background-size: 30px auto;
+	background-position: center; 
+	width: 50px;
+	height: 50px;
+	text-align: botton;
+	font-size: 18px;
+	border-radius: 25px;
+	position: fixed;
+	bottom: 60px;
+	right: 4%;
+	box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.75);
+}
+
+.selectedImage {
+	border-style: solid;
+	border-color:#0000FF;
+	border-width: 5px;
+}
+
+.goTop:hover {
+   	background-color: rgba(231, 166, 26, 0.1);
+	cursor:pointer;
+	box-shadow: 5px 5px 20px 0px rgba(231, 166, 26, 1);
+	color: #e7a61a;
+}
+
+.postTags input.selected {
+	background: #4780AE !important;
+	color: #FFFFFF;
+}
+
+.postTags input {
+	background: DEDEDE !important;
+	color: #000000;
+}
+
+#horoscopeMasterArea {
+    border-radius: 10px;
+    border: 1px solid;
+    width: 650px;
+    height: 280px;    
+}

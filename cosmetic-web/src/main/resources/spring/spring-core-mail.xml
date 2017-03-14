@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+
+    <bean id="core.mailSender.dzMail" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="${mail.host.dzmail}" />
+    </bean>
+
+    <bean id="core.mailSender.twMail" class="com.cyberlink.cosmetic.core.service.impl.BCJavaMailSenderImpl">
+        <property name="host" value="${mail.host.twmail}" />
+    </bean>
+
+    <bean id="core.mailSender.vipMail" class="org.springframework.mail.javamail.JavaMailSenderImpl">
+        <property name="host" value="${mail.host.vipmail}" />
+    </bean>
+    
+    <bean id="core.mailSender.bcMail" class="com.cyberlink.cosmetic.core.service.impl.BCJavaMailSenderImpl">
+        <property name="host" value="${mail.host.bcmail}" />
+    </bean>
+
+    <bean id="core.mailSender.sesMail" class="com.cyberlink.cosmetic.core.service.impl.BCJavaMailSenderImpl">
+        <property name="host" value="${mail.host.sesmail}" />
+        <property name="username" value="${mail.username.sesmail}" />
+        <property name="password" value="${mail.password.sesmail}" />
+        <property name="javaMailProperties">
+            <props>
+                <prop key="mail.transport.protocol">${mail.transport.protocol}</prop>
+                <prop key="mail.smtp.port">${mail.smtp.port}</prop>
+                <prop key="mail.smtp.auth">${mail.smtp.auth}</prop>
+                <prop key="mail.smtp.starttls.enable">${mail.smtp.starttls.enable}</prop>
+				<prop key="mail.smtp.starttls.mail.smtp.starttls.required ">${mail.smtp.starttls.required}</prop>
+			</props>
+        </property>
+    </bean>
+
+    <bean id="core.mailService.dzMail" class="com.cyberlink.core.service.impl.MailSenderImpl">
+        <property name="mailSender" ref="core.mailSender.dzMail" />
+        <property name="from" value="${mail.sender.twmail}" />
+    </bean>
+
+    <bean id="core.mailService.twMail" class="com.cyberlink.cosmetic.core.service.impl.BCMailSenderImpl">
+        <property name="mailSender" ref="core.mailSender.twMail" />
+        <property name="from" value="${mail.sender.twmail}" />
+    </bean>
+
+    <bean id="core.mailService.vipMail" class="com.cyberlink.cosmetic.core.service.impl.BCMailSenderImpl">
+        <property name="mailSender" ref="core.mailSender.vipMail" />
+        <property name="from" value="${mail.sender.vipmail}" />
+    </bean>
+    
+    <bean id="core.mailService.bcMail" class="com.cyberlink.cosmetic.core.service.impl.BCMailSenderImpl">
+        <property name="mailSender" ref="core.mailSender.bcMail" />
+        <property name="from" value="${mail.sender.bcmail}" />
+    </bean>
+    
+    <bean id="core.mailService.sesMail" class="com.cyberlink.cosmetic.core.service.impl.BCMailSenderImpl">
+        <property name="mailSender" ref="core.mailSender.sesMail" />
+        <property name="from" value="${mail.sender.sesmail}" />
+    </bean>
+
+    <bean id="core.mailService.notification.creation" class="com.cyberlink.core.service.impl.MailSenderImpl">
+        <property name="mailSender">
+            <bean class="org.springframework.mail.javamail.JavaMailSenderImpl">
+                <property name="host" value="${mail.host.dzmail}" />
+                <property name="port" value="4001" />
+            </bean>
+        </property>
+        <property name="from" value="DirectorZone &lt;DirectorZone@directorzone.com&gt;" />
+    </bean>
+
+    <bean id="core.mailService.dzMailByLocale" class="org.springframework.beans.factory.config.MapFactoryBean">
+        <property name="sourceMap">
+            <map>
+                <entry key="ACTIVITY::de_DE">
+                    <bean class="com.cyberlink.core.service.impl.MailSenderImpl">
+                        <property name="mailSender">
+                            <bean class="org.springframework.mail.javamail.JavaMailSenderImpl">
+                                <property name="host" value="${mail.host.dzmail}" />
+                                <property name="port" value="2001" />
+                            </bean>
+                        </property>
+                        <property name="from" value="${mail.sender.twmail}" />
+                    </bean>
+                </entry>
+                <entry key="ACTIVITY::en_US">
+                    <bean class="com.cyberlink.core.service.impl.MailSenderImpl">
+                        <property name="mailSender">
+                            <bean class="org.springframework.mail.javamail.JavaMailSenderImpl">
+                                <property name="host" value="${mail.host.dzmail}" />
+                                <property name="port" value="2002" />
+                            </bean>
+                        </property>
+                        <property name="from" value="${mail.sender.twmail}" />
+                    </bean>
+                </entry>
+                <entry key="ACTIVITY::es_ES">
+                    <bean class="com.cyberlink.core.service.impl.MailSenderImpl">
+                        <property name="mailSender">
+                            <bean class="org.springframework.mail.javamail.JavaMailSenderImpl">
+                                <property name="host" value="${mail.host.dzmail}" />
+                                <property name="port" value="2003" />
+                            </bean>
+                        </property>
+                        <property name="from" value="${mail.sender.twmail}" />
+                    </bean>
+                </entry>
+                <entry key="ACTIVITY::fr_FR">
+                    <bean class="com.cyberlink.core.service.impl.MailSenderImpl">
+                        <property name="mailSender">
+                            <bean class="org.springframework.mail.javamail.JavaMailSenderImpl">
+                                <property name="host" value="${mail.host.dzmail}" />
+                                <property name="port" value="2004" />
+                            </bean>
+                        </property>
+                        <property name="from" value="${mail.sender.twmail}" />
+                    </bean>
+                </entry>
+                <entry key="ACTIVITY::it_IT">
+                    <bean class="com.cyberlink.core.service.impl.MailSenderImpl">
+                        <property name="mailSender">
+                            <bean class="org.springframework.mail.javamail.JavaMailSenderImpl">
+                                <property name="host" value="${mail.host.dzmail}" />
+                                <property name="port" value="2005" />
+                            </bean>
+                        </property>
+                        <property name="from" value="${mail.sender.twmail}" />
+                    </bean>
+                </entry>
+                <entry key="ACTIVITY::ja_JP">
+                    <bean class="com.cyberlink.core.service.impl.MailSenderImpl">
+                        <property name="mailSender">
+                            <bean class="org.springframework.mail.javamail.JavaMailSenderImpl">
+                                <property name="host" value="${mail.host.dzmail}" />
+                                <property name="port" value="2006" />
+                            </bean>
+                        </property>
+                        <property name="from" value="${mail.sender.twmail}" />
+                    </bean>
+                </entry>
+                <entry key="ACTIVITY::zh_TW">
+                    <bean class="com.cyberlink.core.service.impl.MailSenderImpl">
+                        <property name="mailSender">
+                            <bean class="org.springframework.mail.javamail.JavaMailSenderImpl">
+                                <property name="host" value="${mail.host.dzmail}" />
+                                <property name="port" value="2007" />
+                            </bean>
+                        </property>
+                        <property name="from" value="${mail.sender.twmail}" />
+                    </bean>
+                </entry>
+                <entry key="ACTIVITY::ko_KR">
+                    <bean class="com.cyberlink.core.service.impl.MailSenderImpl">
+                        <property name="mailSender">
+                            <bean class="org.springframework.mail.javamail.JavaMailSenderImpl">
+                                <property name="host" value="${mail.host.dzmail}" />
+                                <property name="port" value="2008" />
+                            </bean>
+                        </property>
+                        <property name="from" value="${mail.sender.twmail}" />
+                    </bean>
+                </entry>
+
+                <entry key="NONACTIVITY::de_DE">
+                    <bean class="com.cyberlink.core.service.impl.MailSenderImpl">
+                        <property name="mailSender">
+                            <bean class="org.springframework.mail.javamail.JavaMailSenderImpl">
+                                <property name="host" value="${mail.host.dzmail}" />
+                                <property name="port" value="3001" />
+                            </bean>
+                        </property>
+                        <property name="from" value="${mail.sender.twmail}" />
+                    </bean>
+                </entry>
+                <entry key="NONACTIVITY::en_US">
+                    <bean class="com.cyberlink.core.service.impl.MailSenderImpl">
+                        <property name="mailSender">
+                            <bean class="org.springframework.mail.javamail.JavaMailSenderImpl">
+                                <property name="host" value="${mail.host.dzmail}" />
+                                <property name="port" value="3002" />
+                            </bean>
+                        </property>
+                        <property name="from" value="${mail.sender.twmail}" />
+                    </bean>
+                </entry>
+                <entry key="NONACTIVITY::es_ES">
+                    <bean class="com.cyberlink.core.service.impl.MailSenderImpl">
+                        <property name="mailSender">
+                            <bean class="org.springframework.mail.javamail.JavaMailSenderImpl">
+                                <property name="host" value="${mail.host.dzmail}" />
+                                <property name="port" value="3003" />
+                            </bean>
+                        </property>
+                        <property name="from" value="${mail.sender.twmail}" />
+                    </bean>
+                </entry>
+                <entry key="NONACTIVITY::fr_FR">
+                    <bean class="com.cyberlink.core.service.impl.MailSenderImpl">
+                        <property name="mailSender">
+                            <bean class="org.springframework.mail.javamail.JavaMailSenderImpl">
+                                <property name="host" value="${mail.host.dzmail}" />
+                                <property name="port" value="3004" />
+                            </bean>
+                        </property>
+                        <property name="from" value="${mail.sender.twmail}" />
+                    </bean>
+                </entry>
+                <entry key="NONACTIVITY::it_IT">
+                    <bean class="com.cyberlink.core.service.impl.MailSenderImpl">
+                        <property name="mailSender">
+                            <bean class="org.springframework.mail.javamail.JavaMailSenderImpl">
+                                <property name="host" value="${mail.host.dzmail}" />
+                                <property name="port" value="3005" />
+                            </bean>
+                        </property>
+                        <property name="from" value="${mail.sender.twmail}" />
+                    </bean>
+                </entry>
+                <entry key="NONACTIVITY::ja_JP">
+                    <bean class="com.cyberlink.core.service.impl.MailSenderImpl">
+                        <property name="mailSender">
+                            <bean class="org.springframework.mail.javamail.JavaMailSenderImpl">
+                                <property name="host" value="${mail.host.dzmail}" />
+                                <property name="port" value="3006" />
+                            </bean>
+                        </property>
+                        <property name="from" value="${mail.sender.twmail}" />
+                    </bean>
+                </entry>
+                <entry key="NONACTIVITY::zh_TW">
+                    <bean class="com.cyberlink.core.service.impl.MailSenderImpl">
+                        <property name="mailSender">
+                            <bean class="org.springframework.mail.javamail.JavaMailSenderImpl">
+                                <property name="host" value="${mail.host.dzmail}" />
+                                <property name="port" value="3007" />
+                            </bean>
+                        </property>
+                        <property name="from" value="${mail.sender.twmail}" />
+                    </bean>
+                </entry>
+                 <entry key="NONACTIVITY::ko_KR">
+                    <bean class="com.cyberlink.core.service.impl.MailSenderImpl">
+                        <property name="mailSender">
+                            <bean class="org.springframework.mail.javamail.JavaMailSenderImpl">
+                                <property name="host" value="${mail.host.dzmail}" />
+                                <property name="port" value="3008" />
+                            </bean>
+                        </property>
+                        <property name="from" value="${mail.sender.twmail}" />
+                    </bean>
+                </entry>
+            </map>
+        </property>
+    </bean>
+</beans>

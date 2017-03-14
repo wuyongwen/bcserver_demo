@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+    <bean id="core.abstractDao" class="com.cyberlink.core.dao.hibernate.AbstractDaoHibernate"
+        abstract="true">
+        <property name="sessionFactory" ref="core.sessionFactory" />
+    </bean>
+    <bean id="core.genericDao" class="com.cyberlink.core.dao.hibernate.GenericDaoHibernate"
+        abstract="true">
+        <property name="sessionFactory" ref="core.sessionFactory" />
+    </bean>
+
+
+</beans>

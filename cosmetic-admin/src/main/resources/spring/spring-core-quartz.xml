@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <bean id="core.quartz.jobFactory" class="com.cyberlink.core.scheduling.quartz.MethodInvokingJobFactory" />
+    <bean id="core.quartz.scheduler" class="org.springframework.scheduling.quartz.SchedulerFactoryBean">
+        <property name="configLocation" value="classpath:quartz/quartz.properties" />
+        <property name="jobFactory" ref="core.quartz.jobFactory" />
+        <property name="startupDelay" value="10" />
+    </bean>
+    <bean id="core.quartz.jobNameGenerator" class="com.cyberlink.core.scheduling.quartz.generator.impl.DefaultJobNameGenerator" />
+    <bean id="core.quartz.advisor" class="com.cyberlink.core.scheduling.quartz.interceptor.BackgroundJobInterceptor">
+        <property name="jobNameGenerator" ref="core.quartz.jobNameGenerator" />
+        <property name="scheduler" ref="core.quartz.scheduler" />
+    </bean>
+    <aop:config>
+        <aop:advisor advice-ref="core.quartz.advisor"
+            pointcut="@annotation(com.cyberlink.core.scheduling.quartz.annotation.BackgroundJob) and bean(advised.*)" />
+    </aop:config>
+    <bean class="com.cyberlink.core.scheduling.quartz.postprocessor.BackgroundJobBeanFactoryPostProcessor">
+        <property name="schedulerFactoryBeanName" value="core.quartz.scheduler" />
+        <property name="jobDetailFactory">
+            <bean class="com.cyberlink.core.scheduling.quartz.factory.impl.DefaultJobDetailFactory" />
+        </property>
+        <property name="triggerFactory">
+            <bean class="com.cyberlink.core.scheduling.quartz.factory.impl.DefaultTriggerFactory" />
+        </property>
+        <property name="backgroundJobInfoFactory">
+            <bean
+                class="com.cyberlink.core.scheduling.quartz.factory.impl.DefaultBackgroundJobInfoFactory">
+                <constructor-arg ref="core.quartz.jobNameGenerator" />
+            </bean>
+        </property>
+        <property name="scope" value="${quartz.scheduled.job.scope}" />
+        <property name="enableScheduledJobs" value="${quartz.scheduled.job.enabled}" />
+    </bean>
+
+    <aop:config>
+        <aop:advisor advice-ref="core.quartz.backgroundJobSessionInterceptor"
+            pointcut="@annotation(com.cyberlink.core.scheduling.quartz.annotation.BackgroundJob) and bean(backgroundjob.*)" />
+    </aop:config>
+    <bean id="core.quartz.backgroundJobSessionInterceptor" class="com.cyberlink.core.spring.aop.BackgroundJobSessionInterceptor">
+        <constructor-arg ref="core.sessionFactory" />
+    </bean>
+    
+    <!--bean id="copyFileJob" class="org.springframework.scheduling.quartz.JobDetailBean">
+        <property name="jobClass" value="com.cyberlink.cosmetic.action.backend.file.job.CopyFileJob" />
+        <property name="jobDataAsMap">
+            <map>
+                <entry key="fileItemDao">
+                    <ref bean="file.fileItemDao" />
+                </entry>
+                <entry key="storageService">
+                    <ref bean="file.storageService" />
+                </entry>
+            </map>
+        </property>
+    </bean-->
+    <!-- bean id="copyFileTrigger" class="org.springframework.scheduling.quartz.CronTriggerBean">
+        <property name="jobDetail" ref="copyFileJob" />
+        <property name="cronExpression" value="0 0 2/3 * * ?" />
+    </bean-->
+    <!-- bean id="fileSchedulerFactoryBean" class="com.cyberlink.cosmetic.action.backend.file.job.FileSchedulerFactoryBean">
+        <property name="triggers">
+            <list>
+                <ref bean="copyFileTrigger"></ref>
+            </list>
+        </property>
+        <property name="enableQuartzTasks" value="${quartz.scheduled.file.job.enabled}"/>
+        <property name="schedulerName" value="fileScheduler" />
+    </bean-->   
+    
+</beans>

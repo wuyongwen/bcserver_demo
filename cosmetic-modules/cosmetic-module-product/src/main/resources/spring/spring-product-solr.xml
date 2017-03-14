@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+<!-- 
+    <bean id="product.solrProductUpdater" class="com.cyberlink.cosmetic.modules.product.service.impl.SolrProductUpdaterImpl">
+        <property name="productDao" ref="product.ProductDao" />
+        <property name="server" ref="solr.server.product" />
+        <property name="sessionFactory" ref="core.sessionFactory" />
+    </bean>
+
+    <bean id="abstract.solr.server" class="org.apache.solr.client.solrj.impl.CommonsHttpSolrServer"
+        abstract="true">
+        <property name="soTimeout" value="100000" />
+        <property name="connectionTimeout" value="100000" />
+        <property name="defaultMaxConnectionsPerHost" value="100" />
+        <property name="followRedirects" value="false" />
+        <property name="allowCompression" value="true" />
+        <property name="maxRetries" value="1" />
+    </bean>
+
+    <bean id="product.solrProductDao" class="com.cyberlink.cosmetic.modules.product.dao.impl.SolrProductDaoImpl">
+        <property name="productDao" ref="product.ProductDao" />
+        <property name="server" ref="solr.server.product" />
+    </bean>
+
+    <bean id="solr.server.product" parent="abstract.solr.server">
+        <constructor-arg value="${solr.server}/product" />
+    </bean>
+ -->
+</beans>

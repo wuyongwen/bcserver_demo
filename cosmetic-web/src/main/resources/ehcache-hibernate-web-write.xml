@@ -1,0 +1,39 @@
+<ehcache xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="http://ehcache.org/ehcache.xsd" updateCheck="false" name="CYBERLINK_COSMETIC">
+
+    <diskStore path="java.io.tmpdir/ehcache-hibernate-web" />
+             
+       <defaultCache maxElementsInMemory="1600" eternal="false" timeToIdleSeconds="1800"
+        timeToLiveSeconds="1800" overflowToDisk="false" diskPersistent="false"/>
+       <cache name="com.cyberlink.cosmetic.modules.circle.model.CircleAttribute.query.getDefaultCircleAttribute"
+        maxElementsInMemory="100" overflowToDisk="true"
+        diskPersistent="false" eternal="true" />
+       <cache name="com.cyberlink.cosmetic.modules.circle.model.Circle.query.findDefaultCircleByUserIds"
+        maxElementsInMemory="100" overflowToDisk="true"
+        diskPersistent="false" eternal="true" />
+       <cache name="com.cyberlink.cosmetic.modules.common.model.Locale.query.getAvailableInputLocale"
+        maxElementsInMemory="100" overflowToDisk="true"
+        diskPersistent="false" eternal="true" />
+	   <cache name="com.cyberlink.cosmetic.modules.common.model.Locale.query.getDefaultInputLocale"
+        maxElementsInMemory="100" overflowToDisk="true"
+        diskPersistent="false" eternal="true" />
+       <cache name="com.cyberlink.cosmetic.modules.common.model.Locale.query.getAvailableLocaleByType"
+        maxElementsInMemory="100" eternal="false" timeToIdleSeconds="1800"
+        timeToLiveSeconds="1800" overflowToDisk="false" diskPersistent="false"/>       
+       <cache name="com.cyberlink.cosmetic.modules.post.model.Post.query.findNewPostViewByLook"
+        maxElementsInMemory="200" eternal="false" timeToIdleSeconds="600"
+        timeToLiveSeconds="600" overflowToDisk="false" diskPersistent="false"/>                      
+       <cache name="com.cyberlink.cosmetic.modules.post.model.PostDefaultTag.list"
+        maxElementsInMemory="100" overflowToDisk="true"
+        diskPersistent="false" eternal="true" />
+        
+       <cache name="com.cyberlink.cosmetic.modules.user.model.User.query.findByUserType" maxElementsInMemory="1600" eternal="false" timeToIdleSeconds="1800"
+        timeToLiveSeconds="1800" overflowToDisk="false" diskPersistent="false" >
+       </cache>
+       <cache name="com.cyberlink.cosmetic.modules.post.model.Post.query.findNewPostView"
+        maxElementsInMemory="8000" eternal="false" timeToIdleSeconds="600"
+        timeToLiveSeconds="600" overflowToDisk="false" diskPersistent="false">
+       </cache>
+        
+</ehcache>
+

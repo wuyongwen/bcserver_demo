@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+    <bean id="post.PostService" class="com.cyberlink.cosmetic.modules.post.service.impl.PostServiceImpl">
+        <property name="postDao" ref="post.PostDao" />
+        <property name="postProductDao" ref="post.PostProductDao" />
+        <property name="postNewDao" ref="post.PostNewDao" />
+        <property name="postReportedDao" ref="post.PostReportedDao" />
+        <property name="circleDao" ref="circle.circleDao" />    
+        <property name="attachmentDao" ref="post.AttachmentDao" />
+        <property name="attachmentExtLinkDao" ref="post.AttachmentExtLinkDao" />  
+        <property name="fileDao" ref="file.fileDao" />
+        <property name="lookDao" ref="look.LookDao" />
+        <property name="lookTypeDao" ref="look.LookTypeDao" />
+        <property name="fileItemDao" ref="file.fileItemDao" />   
+        <property name="objectMapper" ref="web.objectMapper" />
+        <property name="likeDao" ref="post.LikeDao" />
+        <property name="circleAttributeDao" ref="circle.circleAttributeDao" />
+        <property name="postCircleInDao" ref="post.PostCircleInDao" />
+        <property name="postAttributeDao" ref="post.PostAttributeDao" />
+        <property name="subscribeDao" ref="user.SubscribeDao" />
+        <property name="localeDao" ref="common.localeDao" />
+        <property name="circleService" ref="circle.circleService" />
+        <property name="postPopularityService" ref="post.PostPopularityService" />
+        <property name="asyncPostUpdateService" ref="post.asyncPostUpdateService" />
+        <property name="relatedPostService" ref="post.relatedPostService" />
+        <property name="postTopKeywordDao" ref="post.PostTopKeywordDao"></property>
+        <property name="postScoreDao" ref="post.PostScoreDao" />
+        <property name="postScoreTrendDao" ref="post.PostScoreTrendDao" />
+        <property name="PostAutoArticleDao" ref="post.PostAutoArticleDao" />
+        <property name="circleSubscribeDao" ref="circle.circleSubscribeDao" />
+        <property name="postViewDao" ref="post.PostViewDao" />
+        <property name="postCurateKeywordDao" ref="post.PostCurateKeywordDao" />
+        <property name="userAttrDao" ref="user.userAttrDao" />        
+        <property name="userDao" ref="user.UserDao" />                      
+    </bean>
+    <bean id="delete.DeleteUserService" class="com.cyberlink.cosmetic.modules.post.service.impl.DeleteUserServiceImpl">
+        <property name="userDao" ref="user.UserDao" />
+        <property name="commentService" ref="post.CommentService" />
+        <property name="commentDao" ref="post.CommentDao" />
+        <property name="productCommentDao" ref="product.ProductCommentDao" />
+        <property name="likeService" ref="post.LikeService" />
+        <property name="likeDao" ref="post.LikeDao" />
+        <property name="postAttributeDao" ref="post.PostAttributeDao" />
+        <property name="postViewDao" ref="post.PostViewDao" />
+        <property name="subscribeDao" ref="user.SubscribeDao" />
+        <property name="circleSubscribeDao" ref="circle.circleSubscribeDao" />
+        <property name="circleAttributeDao" ref="circle.circleAttributeDao" />
+        <property name="circleDao" ref="circle.circleDao" />
+        <property name="postService" ref="post.PostService" />
+        <property name="postDao" ref="post.PostDao" />
+        <property name="transactionTemplate" ref="core.jdbcTemplate" /> 
+        <property name="userAttrDao" ref="user.userAttrDao" />           
+    </bean>    
+    
+    <bean id="post.CommentService" class="com.cyberlink.cosmetic.modules.post.service.impl.CommentServiceImpl">
+        <property name="commentDao" ref="post.CommentDao" />
+        <property name="postDao" ref="post.PostDao" />
+        <property name="commentTagDao" ref="post.CommentTagDao" />
+        <property name="postReportedDao" ref="post.PostReportedDao" />
+        <property name="userDao" ref="user.UserDao" />
+        <property name="objectMapper" ref="web.objectMapper" />
+        <property name="postAttributeDao" ref="post.PostAttributeDao" />
+        <property name="likeDao" ref="post.LikeDao" />
+        <property name="postViewDao" ref="post.PostViewDao" />
+        <property name="userBlockedDao" ref="user.UserBlockedDao" />
+    </bean>
+    <bean id="post.LikeService" class="com.cyberlink.cosmetic.modules.post.service.impl.LikeServiceImpl">
+        <property name="likeDao" ref="post.LikeDao" />
+        <property name="postDao" ref="post.PostDao" />
+        <property name="commentDao" ref="post.CommentDao" />
+        <property name="userDao" ref="user.UserDao" />
+        <property name="postAttributeDao" ref="post.PostAttributeDao" />
+        <property name="userAttrDao" ref="user.userAttrDao" />
+        <property name="postViewDao" ref="post.PostViewDao" />
+        <property name="likeRepository" ref="post.likeRepository" />
+        <property name="asyncPostUpdateService" ref="post.asyncPostUpdateService" />
+        <!-- <property name="likeBloomFilter" ref="core.likeBloomFilter" /> -->
+    </bean>
+    <!-- <bean id="post.ProfileReader" class="com.optimaize.langdetect.profiles.LanguageProfileReader">
+	</bean>
+    <bean id="post.LanguageService" class="com.cyberlink.cosmetic.modules.post.service.impl.LanguageDetectServiceImpl">
+        <property name="profileReader" ref="post.ProfileReader" />
+    </bean> -->
+	<bean id="post.PostPopularityService" class="com.cyberlink.cosmetic.modules.post.service.impl.PostPopularityServiceImp">
+        <property name="postNewDao" ref="post.PostNewDao" />
+        <property name="postNewPoolDao" ref="post.PostNewPoolDao" />
+        <property name="postDao" ref="post.PostDao" />
+        <property name="circleDao" ref="circle.circleDao" />
+        <property name="objectMapper" ref="web.objectMapper" />
+	</bean>
+	<bean id="post.AutoPostService" class="com.cyberlink.cosmetic.modules.post.service.impl.AutoPostServiceImpl">
+        <property name="postService" ref="post.PostService" />
+        <property name="fileService" ref="file.fileService" />
+        <property name="adminDao" ref="user.AdminDao" />
+    </bean>
+    <bean id="post.feedService" class="com.cyberlink.cosmetic.modules.post.service.impl.FeedServiceImpl">
+        <property name="subscribeDao" ref="user.SubscribeDao"></property>
+        <property name="userDao" ref="user.UserDao"></property>
+        <property name="postDao" ref="post.PostDao"></property>
+        <property name="circleSubscribeDao" ref="circle.circleSubscribeDao" />
+    </bean>    
+    <bean id="post.trendingService" class="com.cyberlink.cosmetic.modules.post.service.impl.TrendingServiceImpl">
+    	<property name="trendingRepository" ref="post.trendingRepository"></property>
+        <property name="postService" ref="post.PostService" />
+        <property name="postNewDao" ref="post.PostNewDao" />
+        <property name="circleTypeDao" ref="circle.circleTypeDao"></property>
+        <property name="localeDao" ref="common.localeDao" />
+        <property name="transactionTemplate" ref="core.jdbcTemplate" />
+        <property name="postAttributeDao" ref="post.PostAttributeDao" />
+        <property name="postScoreTrendDao" ref="post.PostScoreTrendDao" />
+    </bean>    
+    <bean id="post.relatedPostService" class="com.cyberlink.cosmetic.modules.post.service.impl.RelatedPostServiceImpl">
+        <property name="objectMapper" ref="web.objectMapper"></property>
+        <property name="cacheMgr" ref="cache.ehcacheService"></property>
+        <property name="postTopKeywordDao" ref="post.PostTopKeywordDao"></property>
+        <property name="localeDao" ref="common.localeDao"></property>
+        <property name="circleTypeDao" ref="circle.circleTypeDao"></property>
+    </bean>    
+    <bean id="post.asyncPostUpdateService" class="com.cyberlink.cosmetic.modules.post.service.impl.AsyncPostUpdateServiceImpl">
+        <property name="postDao" ref="post.PostDao" />   
+        <property name="objectMapper" ref="web.objectMapper" />
+        <property name="likeDao" ref="post.LikeDao" />
+        <property name="postScoreDao" ref="post.PostScoreDao" />
+        <property name="postViewDao" ref="post.PostViewDao" />
+        <property name="userDao" ref="user.UserDao" />
+        <property name="userAttrDao" ref="user.userAttrDao" />            
+        <property name="postViewRepository" ref="post.postViewRepository" />          
+        <property name="transactionTemplate" ref="core.jdbcTemplate" />
+    </bean>  
+    <bean id="post.psTrendService" class="com.cyberlink.cosmetic.modules.post.service.impl.PsTrendServiceImpl">
+    	<property name="psTrendGroupDao" ref="post.psTrendGroupDao"></property>
+    	<property name="psTrendDao" ref="post.psTrendDao"></property>
+    	<property name="psTrendHeatRepository" ref="post.psTrendHeatRepository"></property>
+    	<property name="psTrendPoolDao" ref="post.psTrendPoolDao"></property>
+    	<property name="psTrendUserDao" ref="post.psTrendUserDao"></property>
+    	<property name="circleTypeDao" ref="circle.circleTypeDao"></property>
+    </bean>    
+</beans>

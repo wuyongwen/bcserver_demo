@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+    <bean id="core.freemarkerConfiguration" class="org.springframework.ui.freemarker.FreeMarkerConfigurationFactoryBean">
+        <property name="templateLoaders">
+            <list>
+                <bean class="freemarker.cache.ClassTemplateLoader" />
+            </list>
+        </property>
+        <property name="freemarkerSettings">
+            <props>
+                <prop key="number_format">#</prop>
+                <prop key="default_encoding">UTF-8</prop>
+                <prop key="date_format">yyyy/MM/dd</prop>
+            </props>
+        </property>
+        <property name="freemarkerVariables">
+            <map>
+                <entry key="websiteDomain" value="${website.domain}"/>
+            </map>
+        </property>
+    </bean>
+</beans>

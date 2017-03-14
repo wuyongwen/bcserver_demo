@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:rabbit="http://www.springframework.org/schema/rabbit"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
+        http://www.springframework.org/schema/rabbit http://www.springframework.org/schema/rabbit/spring-rabbit-1.0.xsd">
+
+    <!--<rabbit:connection-factory id="core.amqp.connectionFactory" host="${rabbitmq.connection.host}"
+        port="${rabbitmq.connection.port}" username="${rabbitmq.connection.username}" password="${rabbitmq.connection.password}" />
+
+    <rabbit:template id="core.amqp.rabbitTemplate" connection-factory="core.amqp.connectionFactory"
+        exchange="exchange.event.republish" />
+
+    <bean id="core.amqp.messageProducer" class="com.cyberlink.cosmetic.amqp.rabbitmq.RabbitmqMessageProducer">
+        <property name="objectMapper" ref="web.objectMapper" />
+        <property name="rabbitTemplate" ref="core.amqp.rabbitTemplate" />
+        <property name="statsDUpdater" ref="core.defaultStatsDUpdater" />
+    </bean>
+
+    <bean id="core.amqp.durableEventMessageConsumer" class="com.cyberlink.cosmetic.amqp.rabbitmq.DurableEventMessageConsumer">
+        <property name="objectMapper" ref="web.objectMapper" />
+    </bean>-->
+
+</beans>

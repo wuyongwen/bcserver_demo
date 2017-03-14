@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>com.cyberlink.cosmetic</groupId>
+        <artifactId>cosmetic-modules</artifactId>
+        <version>1.0-SNAPSHOT</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>cosmetic-module-notify</artifactId>
+    <packaging>jar</packaging>
+
+    <name>Cosmetic Notify Module</name>
+
+    <scm>
+        <developerConnection>scm:svn:http://clt-svn/svn-live/beautycircle/cosmetic/trunk/cosmetic-modules/cosmetic-notify</developerConnection>
+        <url>http://clt-svn:8090/trac/beautycircle/browser/cosmetic/trunk/cosmetic-modules/cosmetic-notify</url>
+    </scm>
+
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+                <configuration>
+                    <skipSource>true</skipSource>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-jar-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>buildnumber-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.cyberlink.core</groupId>
+            <artifactId>cl-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.cyberlink.cosmetic</groupId>
+            <artifactId>cosmetic-core</artifactId>
+        </dependency>
+		<dependency>
+			<groupId>com.cyberlink.cosmetic</groupId>
+			<artifactId>cosmetic-module-user</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.cyberlink.cosmetic</groupId>
+			<artifactId>cosmetic-module-post</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.cyberlink.cosmetic</groupId>
+			<artifactId>cosmetic-module-circle</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.cyberlink.cosmetic</groupId>
+			<artifactId>cosmetic-module-event</artifactId>
+		</dependency>
+		<dependency>
+            <groupId>com.dbay.apns4j</groupId>
+            <artifactId>cosmetic-module-apns</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.cyberlink.cosmetic</groupId>
+            <artifactId>cosmetic-module-gcm</artifactId>
+        </dependency>
+    
+    </dependencies>
+
+</project>

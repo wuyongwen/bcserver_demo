@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration scan="true" scanPeriod="300 seconds" debug="false">
+
+    <property resource="cosmetic.properties" />
+
+    <logger name="org.apache.commons.digester.Digester" level="OFF" />
+    <logger name="org.apache.activemq.transport.InactivityMonitor" level="OFF" />
+    <logger name="org.springframework.beans.factory.support.DefaultListableBeanFactory"
+        level="OFF" />
+    <logger name="net.jawr.web.resource" level="OFF" />
+    <logger name="org.directwebremoting" level="OFF" />
+    <logger name="net.sourceforge.stripes.controller" level="OFF" />
+    <logger name="org.springframework" level="INFO" />
+    <logger name="org.apache.commons.httpclient" level="OFF" />
+    <logger name="org.hibernate" level="INFO" />
+    <logger name="org.apache.jasper" level="OFF" />
+    <logger name="net.sf.ehcache" level="INFO" />
+	<logger name="com.cyberlink.cosmetic.web.filter.RequestProfilingFilter" level="DEBUG"/>
+	
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+    
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.core.filter.EvaluatorFilter">
+            <evaluator class="ch.qos.logback.classic.boolex.JaninoEventEvaluator">
+                <expression>"com.cyberlink.cosmetic.web.filter.RequestProfilingFilter".equals(logger)</expression>
+            </evaluator>
+            <OnMismatch>ACCEPT</OnMismatch>
+            <OnMatch>DENY</OnMatch>
+        </filter>
+        <file>${logback.logging.file.path}/cosmetic-${HOSTNAME}.log</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%date [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logback.logging.file.path}/cosmetic-${HOSTNAME}-%d{yyyy-MM-dd}.zip
+            </fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+    
+    <appender name="FILE_PROFILER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.core.filter.EvaluatorFilter">
+            <evaluator class="ch.qos.logback.classic.boolex.JaninoEventEvaluator">
+                <expression>"com.cyberlink.cosmetic.web.filter.RequestProfilingFilter".equals(logger)</expression>
+            </evaluator>
+            <OnMismatch>DENY</OnMismatch>
+            <OnMatch>ACCEPT</OnMatch>
+        </filter>
+        <file>${logback.logging.file.path}/cosmetic-${HOSTNAME}-profiler.log</file>
+        <append>true</append>
+        <encoder>
+            <charset>UTF-8</charset>
+            <immediateFlush>false</immediateFlush>
+            <pattern>%date&#9;%thread&#9;%-5level&#9;%logger{36}&#9;%msg%n</pattern>
+        </encoder>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <fileNamePattern>${logback.logging.file.path}/cosmetic-${HOSTNAME}-profiler-%d{yyyy-MM-dd}.zip</fileNamePattern>
+            <maxHistory>30</maxHistory>
+        </rollingPolicy>
+    </appender>
+    
+    <if condition='property("logback.logging.appender").equals("FILE")'>
+        <then>
+            <root level="${logback.logging.level}">
+                <appender-ref ref="FILE" />
+                <appender-ref ref="FILE_PROFILER" />
+            </root>
+        </then>
+        <else>
+            <root level="${logback.logging.level}">
+                <appender-ref ref="CONSOLE" />
+            </root>
+        </else>
+    </if>
+</configuration>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <bean id="product.productService" class="com.cyberlink.cosmetic.modules.product.service.impl.ProductServiceImpl">
+        <property name="productDao" ref="product.ProductDao" />
+        <property name="brandDao" ref="product.BrandDao" />
+        <property name="storeDao" ref="product.StoreDao" />
+        <property name="StorePriceRangeDao" ref="product.StorePriceRangeDao" />
+        
+    </bean>
+    <bean id="product.RelProductTypeService" class="com.cyberlink.cosmetic.modules.product.service.impl.RelProductTypeServiceImpl">
+        <property name="productTypeDao" ref="product.ProductTypeDao" />
+        <property name="relProductTypeDao" ref="product.RelProductTypeDao" />
+    </bean>
+    
+    <bean id="product.BrandService" class="com.cyberlink.cosmetic.modules.product.service.impl.BrandServiceImpl">
+        <property name="brandDao" ref="product.BrandDao" />
+	</bean>
+
+	<bean id="product.BrandIndexService" class="com.cyberlink.cosmetic.modules.product.service.impl.BrandIndexServiceImpl">
+        <property name="brandIndexDao" ref="product.BrandIndexDao" />
+	</bean>
+
+	<bean id="product.ProductTypeService" class="com.cyberlink.cosmetic.modules.product.service.impl.ProductTypeServiceImpl">
+        <property name="productTypeDao" ref="product.ProductTypeDao" />
+	</bean>
+	
+</beans>

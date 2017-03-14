@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.0.xsd">
+
+    <bean id="post.postViewRepository" class="com.cyberlink.cosmetic.modules.post.repository.redis.PostViewRepositoryRedis"
+        parent="core.abstractRedisRepository.cache">
+        <property name="objectMapper" ref="web.objectMapper" />
+    </bean>
+    <bean id="post.likeRepository" class="com.cyberlink.cosmetic.modules.post.repository.redis.LikeRepositoryRedis"
+        parent="core.abstractRedisRepository.main">
+    </bean>
+	<bean id="post.trendingRepository" class="com.cyberlink.cosmetic.modules.post.repository.redis.TrendingRepositoryRedis"
+        parent="core.abstractRedisRepository.trend">
+    </bean>
+    <bean id="post.trendingCacheRepository" class="com.cyberlink.cosmetic.modules.post.repository.redis.TrendingCacheRepositoryRedis"
+        parent="core.abstractRedisRepository.cache">
+    </bean>
+    <bean id="post.postHeatRepository" class="com.cyberlink.cosmetic.modules.post.repository.elasticsearch.PostHeatRepositoryES"
+   		parent="core.elasticRepository">
+    </bean>
+    <bean id="post.psTrendHeatRepository" class="com.cyberlink.cosmetic.modules.post.repository.elasticsearch.PsTrendHeatRepositoryES"
+   		parent="core.elasticRepository">
+    </bean>
+</beans>

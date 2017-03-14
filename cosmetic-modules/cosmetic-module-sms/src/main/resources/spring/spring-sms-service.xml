@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <bean id="sms.shortMessageServiceNexmo" class="com.cyberlink.cosmetic.modules.sms.service.impl.ShortMessageServiceNexmo">
+        <property name="senderIdPoolProperties" ref="sms.nexmo.sender.id.pool.properties.file" />
+        <property name="urlContentReader" ref="web.urlContentReader.noCache" />
+        <property name="objectMapper" ref="web.objectMapper" />
+        <property name="serviceUrl" value="${sms.nexmo.service.url}" />
+        <property name="apiKey" value="${sms.nexmo.api.key}" />
+        <property name="apiSecret" value="${sms.nexmo.api.secret}" />
+        <!-- <property name="statsDUpdater" ref="core.defaultStatsDUpdater" /> -->
+    </bean>
+
+
+
+
+    <bean id="sms.shortMessageServiceSMSGateway" class="com.cyberlink.cosmetic.modules.sms.service.impl.ShortMessageServiceSMSGateway">
+        <property name="serviceUrl" value="${sms.smsgateway.service.url}" />
+        <property name="productToken" value="${sms.smsgateway.product.token}" />
+        <property name="from" value="${sms.smsgateway.from}" />
+        <!-- <property name="statsDUpdater" ref="core.defaultStatsDUpdater" /> -->
+    </bean>
+
+    <bean id="sms.shortMessageServiceClickatell" class="com.cyberlink.cosmetic.modules.sms.service.impl.ShortMessageServiceClickatell">
+        <property name="serviceUrl" value="${sms.clickatell.service.url}" />
+        <property name="apiId" value="${sms.clickatell.service.api.id}" />
+        <property name="username" value="${sms.clickatell.service.username}" />
+        <property name="password" value="${sms.clickatell.service.password}" />
+        <property name="urlContentReader" ref="web.urlContentReader.noCache" />
+    </bean>
+
+    <bean id="sms.shortMessageServiceTwilio" class="com.cyberlink.cosmetic.modules.sms.service.impl.ShortMessageServiceTwilio">
+        <property name="serviceUrl" value="${sms.twilio.service.url}" />
+        <property name="from" value="${sms.twilio.service.from}" />
+        <property name="urlContentReader" ref="web.urlContentReader.noCache" />
+    </bean>
+
+    <bean id="sms.shortMessageServiceTeleSign" class="com.cyberlink.cosmetic.modules.sms.service.impl.ShortMessageServiceTeleSign">
+        <property name="customerId" value="${sms.telesign.customerId}" />
+        <property name="apiSecretkey" value="${sms.telesign.apiSecretkey}" />
+        <property name="apiBaseURL" value="${sms.telesign.apiBaseURL}" />
+        <property name="v1VerifySMS" value="${sms.telesign.v1VerifySMS}" />
+        <property name="objectMapper" ref="web.objectMapper" />
+    </bean>
+
+    <!-- <bean id="sms.shortMessageStatsDUpdater" class="com.cyberlink.cosmetic.modules.sms.service.impl.DefaultShortMessageStatsDUpdater">
+        <property name="statsDUpdater" ref="core.defaultStatsDUpdater" />
+    </bean>-->
+
+    <bean id="sms.phoneNumberService" class="com.cyberlink.cosmetic.modules.sms.service.impl.PhoneNumberServiceImpl">
+        <property name="trunkPrefixProperties" ref="sms.phone.number.trunk.prefix.properties.file" />
+        <property name="lengthProperties" ref="sms.phone.number.length.properties.file" />
+    </bean>
+
+    <bean id="sms.phoneRegistrationService" class="com.cyberlink.cosmetic.modules.sms.service.impl.PhoneRegistrationServiceImpl">
+        <property name="phoneNumberService" ref="sms.phoneNumberService" />
+        <property name="phoneRegistrationRepository" ref="sms.phoneRegistrationRepository" />
+    </bean>
+
+</beans>

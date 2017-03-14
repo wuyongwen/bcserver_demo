@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+	<bean id="web.urlContentReader.noCache" class="com.cyberlink.core.web.utl.impl.URLContentReaderImpl">
+        <property name="cacheEnabled" value="false" />
+    </bean>
+
+	<bean id="cosmetic.web.urlContentReader" class="com.cyberlink.cosmetic.web.utl.impl.URLContentReaderImpl">
+    </bean>
+    
+	<bean id="web.urlContentReader.redirect" class="com.cyberlink.core.web.utl.impl.URLContentReaderRedirectImpl">
+        <property name="cacheEnabled" value="false" />
+    </bean>
+
+    <bean id="web.objectMapper" class="com.cyberlink.cosmetic.spring.jackson.ObjectMapperFactoryBean">
+        <property name="jsonPrettyPrint" value="true" />
+    </bean>
+</beans>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+
+    <bean id="search.SearchPostService" class="com.cyberlink.cosmetic.modules.search.service.impl.SearchPostServiceImpl">
+    	<property name="solr" ref="solr.server.post" />
+    	<property name="postKeywordDao" ref="search.PostKeywordDao" />
+    </bean>
+    <bean id="search.SearchUserService" class="com.cyberlink.cosmetic.modules.search.service.impl.SearchUserServiceImpl">
+    	<property name="solr" ref="solr.server.user" />
+    </bean>
+    <bean id="search.SearchCircleService" class="com.cyberlink.cosmetic.modules.search.service.impl.SearchCircleServiceImpl">
+    	<property name="solr" ref="solr.server.circle" />
+    </bean>
+    <bean id="search.SuggestPostService" class="com.cyberlink.cosmetic.modules.search.service.impl.SuggestPostServiceImpl">
+    	<property name="solr" ref="solr.server.post" />
+    </bean>
+    <bean id="search.UserKeywordService" class="com.cyberlink.cosmetic.modules.search.service.impl.UserKeywordServiceImpl">
+    	<property name="userKeywordDao" ref="search.UserKeywordDao" />
+    </bean>
+    <bean id="search.PostKeywordService" class="com.cyberlink.cosmetic.modules.search.service.impl.PostKeywordServiceImpl">
+    	<property name="postKeywordDao" ref="search.PostKeywordDao" />
+    </bean>    
+</beans>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd">
+
+    <bean id="file.fileService" class="com.cyberlink.cosmetic.modules.file.service.impl.FileServiceImpl">
+        <property name="imageService" ref="file.imageService"></property>
+        <property name="storageService" ref="file.storageService"></property>
+        <property name="ossService" ref="file.ossService"></property>
+        <property name="fileDao" ref="file.fileDao"></property>  
+        <property name="fileItemDao" ref="file.fileItemDao"></property>    
+    </bean>
+
+    <bean id="file.storageService" class="com.cyberlink.cosmetic.modules.file.service.impl.S3StorageServiceImpl">
+        <property name="s3Service" ref="amazon.s3Service"></property>
+        <property name="bucket" value="${file.bucket}"></property>
+    </bean>
+    
+    <bean id="amazon.s3Service" class="org.jets3t.service.impl.rest.httpclient.RestS3Service">
+        <constructor-arg>
+            <bean class="org.jets3t.service.security.AWSCredentials">
+                <constructor-arg index="0" value="${file.bucket.key}" />
+                <constructor-arg index="1" value="${file.bucket.secret}" />
+            </bean>
+        </constructor-arg>
+    </bean>
+    
+    <bean id="file.bosService" class="com.cyberlink.cosmetic.modules.file.service.impl.BOSServiceImpl">
+        <property name="client" ref="bos.client"></property>
+        <property name="bucket" value="${file.bos.bucket}"></property>
+    </bean>
+    
+    <bean id="bos.client" class="com.baidubce.services.bos.BosClient">
+        <constructor-arg>
+            <bean class="com.baidubce.services.bos.BosClientConfiguration">
+                <property name="credentials" ref="bos.credentials"></property>
+            </bean>            
+        </constructor-arg>
+    </bean>
+    
+    <bean id="bos.credentials" class="com.baidubce.auth.DefaultBceCredentials">
+        <constructor-arg index="0" value="${file.bos.bucket.accessKey}" />
+        <constructor-arg index="1" value="${file.bos.bucket.secretKey}" />
+    </bean>
+    
+    <bean id="file.ossService" class="com.cyberlink.cosmetic.modules.file.service.impl.OSSServiceImpl">
+        <property name="client" ref="oss.client"></property>
+        <property name="bucket" value="${file.oss.bucket}"></property>
+    </bean>
+    
+    <bean id="oss.client" class="com.aliyun.oss.OSSClient">
+        <constructor-arg index="0" value="${file.oss.endpoint}" />
+        <constructor-arg index="1" value="${file.oss.accessKeyId}" />
+        <constructor-arg index="2" value="${file.oss.accessKeySecret}" />
+    </bean>
+    
+    <bean id="file.imageService" class="com.cyberlink.cosmetic.modules.file.service.impl.MagickImageServiceImpl">
+        <property name="command" value="${file.imageMagick.command}"></property>
+    </bean>
+    
+    <bean id="file.photoProcessService" class="com.cyberlink.cosmetic.modules.file.service.impl.PhotoProcessServiceImp" destroy-method="Destroy">
+    	<constructor-arg index="0" value="2" /> <!-- maxHandler -->
+        <constructor-arg index="1" value="2" /> <!-- maxThread -->
+   	</bean>
+</beans>

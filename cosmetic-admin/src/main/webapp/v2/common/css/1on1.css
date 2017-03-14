@@ -1,0 +1,136 @@
+@charset "utf-8";
+/* CSS Document */
+.chatbox{
+	width:100%;
+	background:#FFFFFF;
+	padding-bottom:12px;
+	margin-bottom:8px;
+	border:1px solid #d2d2d2;
+}
+.user_coverart{
+	width:70px;
+	height:70px;
+	border:1px solid #c7c7c7;
+	float:left;
+	margin: 12px 18px 0 12px;
+}
+.user_coverart img{ width:100%; height:100%} 
+.msg_Rctn{
+	float:left;
+	padding: 12px 12px 0 0;
+	width: 625px;
+}
+.msg_info { 
+	clear:both;
+	
+}
+
+.msg_name{
+	font-size:16px;
+	color:#000000;
+	float: left;
+}
+.msg_date{ float:right; color:#5e5e5e; font-size:14px;}
+.msg_replied{
+	float:right;
+	color:#4ea101;
+	font-size:14px;
+	margin-left: 10px;
+	border-left: #d2d2d2 1px solid;
+	padding-left: 10px;
+}
+.msg_txt{
+	font-size:13px;
+	color:#1f1f1f;
+	line-height:18px;
+	float: left;
+	width: 550px;
+	padding-top: 5px;
+
+}
+.reply_btn_x{
+	display:block;
+	padding:5px 0 0 0;
+	float:right;
+	color: #c2c1c1;}
+.reply_btn a{
+	display:block;
+	padding:5px 0 0 0;
+	float:right;
+	color: #62cc00;
+}
+.reply_btn a:hover{
+	color:#6fe601;
+}
+.box_sep{
+	width:100%;
+	height:1px;
+	margin-top: 12px;
+	background: #d2d2d2;
+}
+.quick_reply{ padding:8px 12px}
+.quick_reply_top{}
+.quick_title{ float:left; font-size:16px; color:#000000;}
+.quick_close{
+	float:right;
+	margin-top: 4px;
+}
+.quick_reply_box{
+	background:#f4f3f3;
+	border:1px solid #8d8d8d;
+	margin-top: 5px;
+
+}
+.quick_reply_boxtop{
+	height:33px;
+	line-height:33px;
+	background:#e3e2e2;
+	border-bottom:1px solid #8d8d8d;
+}
+.box_top_icon1 a{
+	float:left;
+	width:35px;
+	color:#8c8b8b;
+	text-align:center;
+	border-right:1px solid #8d8d8d;
+}
+.box_top_icon1 a:hover{color:#737373; }
+.box_top_icon2 a{ 
+	float:left; 
+	color:#8c8b8b; 
+	width:35px; 
+	text-align:center;
+	
+}
+.box_dw{
+	min-height:90px;
+
+}
+
+.box_bottom{ margin-top:8px;}
+.send_reply_btn a{
+	display:block;
+	background:#62cc00;
+	
+	color:#2a2a2a;
+	text-align:center;
+	padding:0 30px;
+	height:26px;
+	line-height:26px;
+	border:1px solid #777777;
+	float: right;
+	
+}
+.clear_reply_btn a{
+	display:block;
+	background:#e9e8e8;
+	color:#2a2a2a;
+	text-align:center;
+	padding:0 30px;
+	height:26px;
+	line-height:26px;
+	border:1px solid #777777;
+	float: right;
+	margin-right: 8px;
+	
+}

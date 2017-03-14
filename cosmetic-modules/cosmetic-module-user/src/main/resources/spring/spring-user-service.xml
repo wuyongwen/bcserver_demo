@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+	
+	<bean id="user.localeService" class="com.cyberlink.cosmetic.modules.user.service.impl.LocaleServiceImpl">
+        	<property name="localeDao" ref="common.localeDao" />
+	</bean>
+	<bean id="user.userService" class="com.cyberlink.cosmetic.modules.user.service.impl.UserServiceImpl">
+        	<property name="userDao" ref="user.UserDao" />
+        	<property name="userReportedDao" ref="user.UserReportedDao" />
+        	<property name="userBadgeDao" ref="user.userBadgeDao" />
+        	<property name="sessionDao" ref="user.SessionDao" />
+        	<property name="userSessionRepository" ref="user.userSessionRepository" />
+	</bean>
+</beans>

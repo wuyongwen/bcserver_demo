@@ -1,0 +1,128 @@
+@charset "utf-8";
+/* CSS Document */
+
+body{
+	width:100%;
+	height:100%;
+	background-image: url(../images/SignInbg3.jpg);
+	background-size:cover;
+	background-position:top center;
+	
+	}
+.u_logo{
+	float:left;
+	margin-left: 25px;
+	margin-right: 15px;
+}
+.u_logotxt{ float:left;}
+.signin{
+	margin-top:53px;
+}
+.signin_left{
+	float:left;
+}
+
+.signin_right{
+	width: 469px;
+	margin: 0 auto;
+	background: rgba(0, 0 ,0, 0.7);
+	border-radius:4px;
+	height: 480px;
+	top: 50px;
+	margin-top: 8%;
+	-webkit-box-shadow: 0 0 19px 1px rgba(255,255,255,0.5);
+	-moz-box-shadow: 0 0 19px 1px rgba(255,255,255,0.5);
+	box-shadow: 0 0 19px 1px rgba(255,255,255,0.5);
+
+}
+.top_logo{ width:382px; margin:0 auto;}
+.signin_right h1{
+	font-size:40px;
+	font-weight:400;
+	color:#45d022;
+	margin:0 auto;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
+.signin_right h2{
+	color:#45d022;
+	font-size:16px;
+	margin-top:5px;
+	font-weight:normal;
+	padding-left: 2px;
+}
+.signin_right h3{
+	font-size:24px;
+	color:#45d022;
+	font-weight:normal;
+}
+.signin_info{
+	margin-top:50px;
+	width: 382px;
+	margin: 0 auto;
+
+}
+.signin_toptitle{
+	color:#FFFFFF;
+	font-size:26px;
+	text-align: center;
+	margin-top: 20px;
+	
+}
+.signin_area{
+	width:382px;
+	height:93px;
+	background:url(../images/SignIn_infobg.png);
+	margin-top: 15px;
+}
+.signin_fillin_list{
+	background:transparent;
+	font-size:18px;
+	border:0;
+	height:47px;
+	line-height:47px;
+	color:#737373;
+	width: 100%;
+	padding: 0 10px 0 40px;
+}
+
+.remember{
+	font-size:14px;
+	color:#CCCCCC;
+	margin-top: 10px;
+}
+.checkbox_rememberme{
+	margin:0px 10px 0 0;
+	float:left;
+	width: 20px;
+}
+.signin_btn{
+	background:#6bde00;
+	border-radius:4px;
+	height:40px;
+	line-height:40px;
+	width: 100%;
+	margin-bottom: 20px;
+	border: 1px solid #64ce02;
+	margin-top: 20px;
+	
+}
+.signin_btn a{
+	display:block;
+	line-height:35px;
+	color:#FFFFFF;
+	text-decoration:none;
+	text-align:center;
+	font-size: 18px;
+	font-weight: 600;
+}
+.signin_btn a:hover{
+	background:#84ec23;
+	border-radius:4px;
+	height:38px;
+	
+}
+.cl_logo{
+	position:absolute;
+	margin: 0 0 0 280px;
+}
